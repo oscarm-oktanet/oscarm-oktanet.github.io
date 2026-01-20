@@ -7,40 +7,45 @@
     <link rel="stylesheet" href="style/home_style.css">
 </head>
 <body>
-    <header>
-        <img class="okta-logo" src="img/Oktanet_Logo.png" alt="">
-        <fieldset class="switcher">
-            <label class="switcher_option">
-                <input class="switcher_input" type="radio" name="theme" value="light" c-option="1" checked onclick="generateContent('1')"/>
-                <span class="switcher_option_text">Oktanet</span>
-            </label>
-            <label class="switcher_option">
-                <input class="switcher_input" type="radio" name="theme" value="dark" c-option="2" onclick="generateContent('2')" />
-                <span class="switcher_option_text">Oktavia</span>
-            </label>
-            <label class="switcher_option">
-                <input class="switcher_input" type="radio" name="theme" value="dim" c-option="3" onclick="generateContent('3')" />
-                <span class="switcher_option_text">Servicio</span>
-            </label>
-            <label class="switcher_option">
-                <input class="switcher_input" type="radio" name="theme" value="dim" c-option="4" onclick="generateContent('4')" />
-                <span class="switcher_option_text">Automatización</span>
-            </label>
-            <label class="switcher_option">
-                <input class="switcher_input" type="radio" name="theme" value="dim" c-option="5" onclick="generateContent('5')" />
-                <span class="switcher_option_text">Contacto</span>
-            </label>
-        </fieldset>
+    <header class="site-header">
+        <nav class="site-nav">
+            <div class="nav-inner">
+                <img class="okta-logo" src="img/Oktanet_Logo.png" alt="">
+                <fieldset class="switcher">
+                    <label class="switcher_option">
+                        <input class="switcher_input" type="radio" name="theme" value="light" c-option="1" checked onclick="generateContent('1')"/>
+                        <span class="switcher_option_text">Oktanet</span>
+                    </label>
+                    <label class="switcher_option">
+                        <input class="switcher_input" type="radio" name="theme" value="dark" c-option="2" onclick="generateContent('2')" />
+                        <span class="switcher_option_text">Oktavia</span>
+                    </label>
+                    <label class="switcher_option">
+                        <input class="switcher_input" type="radio" name="theme" value="dim" c-option="3" onclick="generateContent('3')" />
+                        <span class="switcher_option_text">Servicio</span>
+                    </label>
+                    <label class="switcher_option">
+                        <input class="switcher_input" type="radio" name="theme" value="dim" c-option="4" onclick="generateContent('4')" />
+                        <span class="switcher_option_text">Automatización</span>
+                    </label>
+                    <label class="switcher_option">
+                        <input class="switcher_input" type="radio" name="theme" value="dim" c-option="5" onclick="generateContent('5')" />
+                        <span class="switcher_option_text">Contacto</span>
+                    </label>
+                </fieldset>
+                <div class="nav-spacer" aria-hidden="true"></div>
+            </div>
+        </nav>
     </header>
 
     <main class="main-page">
         <section class="dashboard-section">
             <div class="dashboard-text">
-                <h2 class="shimmer-gradient-text">La automatización de tu<br> infraestructura,nunca<br> fue tan fácil.</h2>
+                <h2 class="shimmer-gradient-text">La automatización de tu infraestructura, nunca fue tan fácil.</h2>
                 <button onclick="generateContent('2')">Descubre Oktavia</button>
             </div>
             <div class="dashboard-image">
-                <img src="img/Oktanet_Dashboard.png" alt="">
+                <img src="img/DASHB_main.png" alt="">
             </div>
         </section>
         
@@ -97,6 +102,16 @@
             </div>
         </section>
 
+        <section class="image-showcase-section">
+            <h2>Desde configuraciones hasta inventarios</h2>
+            <p>Manten el control sobre la totalidad de tu red.</p>
+            <div class="image-showcase-grid">
+                <div class="image-slot-1"></div>
+                <div class="image-slot-2"></div>
+                <div class="image-slot-3"></div>
+            </div>
+        </section>
+
         <section class="floating-block-section">
             <h2>Impacto Medible y Resultados Claros</h2>
             <div class="floating-block-container">
@@ -150,7 +165,7 @@
                             <li><img src="img/ICON_bullpoint.png" alt="">Telemetria y Automatizacion de Tareas</li>
                         </ul>
                     </div>
-                    <img src="img/Oktanet_Dashboard_OnPC.png" alt="">
+                    <img src="img/DASHB_ConfComp.png" alt="">
                 </div>
                 <span class="stair-bpoint-footer">
                     Con Oktavia, los equipos de red pueden visualizar, auditar y optimizar su infraestructura de forma centralizada, reduciendo tiempos operativos y eliminando la dependencia de herramientas fragmentadas o scripts manuales.
