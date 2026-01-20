@@ -1517,7 +1517,7 @@ footer {
 
     .slide {
         max-width: clamp(250px, 44vw, 300px);
-        min-height: clamp(160px, 26vw, 220px);
+        min-height: clamp(80px, 18vw, 220px);
     }
 
     .sliding-card:hover .slide1,
@@ -1614,6 +1614,10 @@ footer {
         height: 44px;
     }
 
+    .bordeff-block {
+        font-size: calc(var(--c-text-size) * 2);
+    }
+
     .floating-block-section {
     gap: 3vh;
     }
@@ -1628,6 +1632,14 @@ footer {
 
     .trust-strip-inner {
         grid-template-columns: 1fr;
+    }
+
+    .floating-block-card-title {
+        font-size: calc(var(--c-text-size) + var(--c-xtra-title-size-addition) + var(--c-text-size));
+    }
+
+    .floating-block-card-text {
+        font: calc(var(--c-text-size) + var(--c-subtitle-size-addition));
     }
 
     .footer-contact form {
