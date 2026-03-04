@@ -1,5 +1,6 @@
 (function () {
     const body = document.body;
+    const brandLink = document.querySelector('.brand');
     const navToggle = document.querySelector('.nav-toggle');
     const mainNav = document.querySelector('.main-nav');
     const navLinks = document.querySelectorAll('.main-nav a');
@@ -24,6 +25,10 @@
         navLinks.forEach(function (link) {
             link.addEventListener('click', closeNav);
         });
+
+        if (brandLink) {
+            brandLink.addEventListener('click', closeNav);
+        }
 
         window.addEventListener('resize', function () {
             if (window.innerWidth > 860) {
@@ -72,6 +77,40 @@
         }
     }
 
+    const setupReplayObserver = function (section, enterRatio, onEnter, onFullyExit) {
+        const startRatio = Math.min(0.95, Math.max(0.01, enterRatio));
+        let hasEntered = false;
+
+        const observer = new IntersectionObserver(
+            function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.target !== section) {
+                        return;
+                    }
+
+                    const ratio = entry.intersectionRatio;
+
+                    if (!hasEntered && ratio >= startRatio) {
+                        hasEntered = true;
+                        onEnter();
+                        return;
+                    }
+
+                    // Reset only when the whole section is fully out of view.
+                    if (hasEntered && ratio === 0) {
+                        hasEntered = false;
+                        onFullyExit();
+                    }
+                });
+            },
+            {
+                threshold: [0, startRatio]
+            }
+        );
+
+        observer.observe(section);
+    };
+
     const trustStrip = document.querySelector('.trust-strip');
     const trustLogos = document.querySelectorAll('.trust-logos img');
 
@@ -93,24 +132,9 @@
         if (prefersReducedMotion || typeof IntersectionObserver === 'undefined') {
             trustStrip.classList.add('logo-fade-active');
         } else {
-            const logoObserver = new IntersectionObserver(
-                function (entries) {
-                    entries.forEach(function (entry) {
-                        if (entry.isIntersecting) {
-                            runLogoFade();
-                            return;
-                        }
-
-                        trustStrip.classList.remove('logo-fade-active');
-                    });
-                },
-                {
-                    threshold: 0.45,
-                    rootMargin: '0px 0px -12% 0px'
-                }
-            );
-
-            logoObserver.observe(trustStrip);
+            setupReplayObserver(trustStrip, 0.2, runLogoFade, function () {
+                trustStrip.classList.remove('logo-fade-active');
+            });
         }
     }
 
@@ -135,24 +159,9 @@
         if (prefersReducedMotion || typeof IntersectionObserver === 'undefined') {
             serviceSection.classList.add('block-fade-active');
         } else {
-            const serviceObserver = new IntersectionObserver(
-                function (entries) {
-                    entries.forEach(function (entry) {
-                        if (entry.isIntersecting) {
-                            runServiceFade();
-                            return;
-                        }
-
-                        serviceSection.classList.remove('block-fade-active');
-                    });
-                },
-                {
-                    threshold: 0.28,
-                    rootMargin: '0px 0px -10% 0px'
-                }
-            );
-
-            serviceObserver.observe(serviceSection);
+            setupReplayObserver(serviceSection, 0.18, runServiceFade, function () {
+                serviceSection.classList.remove('block-fade-active');
+            });
         }
     }
 
@@ -177,24 +186,9 @@
         if (prefersReducedMotion || typeof IntersectionObserver === 'undefined') {
             casesSection.classList.add('block-fade-active');
         } else {
-            const casesObserver = new IntersectionObserver(
-                function (entries) {
-                    entries.forEach(function (entry) {
-                        if (entry.isIntersecting) {
-                            runCasesFade();
-                            return;
-                        }
-
-                        casesSection.classList.remove('block-fade-active');
-                    });
-                },
-                {
-                    threshold: 0.3,
-                    rootMargin: '0px 0px -10% 0px'
-                }
-            );
-
-            casesObserver.observe(casesSection);
+            setupReplayObserver(casesSection, 0.2, runCasesFade, function () {
+                casesSection.classList.remove('block-fade-active');
+            });
         }
     }
 
@@ -219,24 +213,9 @@
         if (prefersReducedMotion || typeof IntersectionObserver === 'undefined') {
             methodSection.classList.add('domino-active');
         } else {
-            const dominoObserver = new IntersectionObserver(
-                function (entries) {
-                    entries.forEach(function (entry) {
-                        if (entry.isIntersecting) {
-                            runDominoAnimation();
-                            return;
-                        }
-
-                        methodSection.classList.remove('domino-active');
-                    });
-                },
-                {
-                    threshold: 0.34,
-                    rootMargin: '0px 0px -10% 0px'
-                }
-            );
-
-            dominoObserver.observe(methodSection);
+            setupReplayObserver(methodSection, 0.2, runDominoAnimation, function () {
+                methodSection.classList.remove('domino-active');
+            });
         }
     }
 
@@ -360,24 +339,6 @@
         }
 
         resetMetricsAnimations();
-
-        const metricsObserver = new IntersectionObserver(
-            function (entries) {
-                entries.forEach(function (entry) {
-                    if (entry.isIntersecting) {
-                        runMetricsAnimations();
-                        return;
-                    }
-
-                    resetMetricsAnimations();
-                });
-            },
-            {
-                threshold: 0.5,
-                rootMargin: '0px 0px -12% 0px'
-            }
-        );
-
-        metricsObserver.observe(metricsSection);
+        setupReplayObserver(metricsSection, 0.2, runMetricsAnimations, resetMetricsAnimations);
     }
 })();
