@@ -3,268 +3,296 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oktanet</title>
+    <meta name="description" content="Oktanet ayuda a equipos de TI a automatizar, auditar y mantener redes empresariales con dashboards detallados y operación centralizada.">
+    <title>Oktanet | Automatización y Auditoría de Redes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Source+Sans+3:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style/home_style.css">
 </head>
 <body>
-    <header class="site-header">
-        <nav class="site-nav">
-            <div class="nav-inner">
-                <img class="okta-logo" src="img/Oktanet_Logo.png" alt="">
-                <fieldset class="switcher">
-                    <label class="switcher_option">
-                        <input class="switcher_input" type="radio" name="theme" value="light" c-option="1" checked onclick="generateContent('1')"/>
-                        <span class="switcher_option_text">Oktanet</span>
-                    </label>
-                    <label class="switcher_option">
-                        <input class="switcher_input" type="radio" name="theme" value="dark" c-option="2" onclick="generateContent('2')" />
-                        <span class="switcher_option_text">Oktavia</span>
-                    </label>
-                    <label class="switcher_option">
-                        <input class="switcher_input" type="radio" name="theme" value="dim" c-option="3" onclick="generateContent('3')" />
-                        <span class="switcher_option_text">Servicio</span>
-                    </label>
-                    <label class="switcher_option">
-                        <input class="switcher_input" type="radio" name="theme" value="dim" c-option="4" onclick="generateContent('4')" />
-                        <span class="switcher_option_text">Automatización</span>
-                    </label>
-                    <label class="switcher_option">
-                        <input class="switcher_input" type="radio" name="theme" value="dim" c-option="5" onclick="generateContent('5')" />
-                        <span class="switcher_option_text">Contacto</span>
-                    </label>
-                </fieldset>
-                <div class="nav-spacer" aria-hidden="true"></div>
-            </div>
-        </nav>
+    <header class="site-header" id="inicio">
+        <div class="container nav-shell">
+            <a class="brand" href="#inicio" aria-label="Ir al inicio">
+                <img src="img/Oktanet_Logo.png" alt="Logo de Oktanet">
+            </a>
+
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="main-nav" id="main-nav" aria-label="Principal">
+                <a href="#plataforma">Plataforma</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#metodologia">Metodología</a>
+                <a href="#casos">Casos de uso</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+
+            <a class="btn btn-primary nav-cta" href="#contacto">Solicitar Demo</a>
+        </div>
     </header>
 
-    <main class="main-page">
-        <section class="dashboard-section">
-            <div class="dashboard-text">
-                <h2 class="shimmer-gradient-text">La automatización de tu infraestructura, nunca fue tan fácil.</h2>
-                <button onclick="generateContent('2')">Descubre Oktavia</button>
-            </div>
-            <div class="dashboard-image">
-                <img src="img/DASHB_main.png" alt="">
-            </div>
-        </section>
-        
-        <section class="sliding-cards-section">
-            <!-- <video src="vid/Section2_vid.mp4" autoplay muted loop></video> -->
-            <div class="sliding-card-container">
-                <div class="sliding-card">
-                    <div class="slide slide1">
-                        <div class="sliding-card-content">
-                            <span class="sliding-card-icon">
-                                <img class="sliding-card-pic-icon" src="img/ICON_automation.png" alt="">
-                                Automatización<br> de redes
-                            </span>
-                        </div>
+    <main>
+        <section class="hero-section">
+            <div class="container hero-grid">
+                <div class="hero-copy">
+                    <p class="eyebrow">Operación de red para equipos modernos</p>
+                    <h1>Automatiza, audita y optimiza toda tu infraestructura desde un solo panel.</h1>
+                    <p>
+                        Oktanet centraliza visibilidad de inventario, cumplimiento de configuración, cambios de software y topología para que tu equipo pase de operar en modo reactivo a trabajar con control continuo.
+                    </p>
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" href="#contacto">Hablar con ventas</a>
+                        <a class="btn btn-secondary" href="#plataforma">Conocer Oktavia</a>
                     </div>
-                    <div class="slide slide2">
-                        <div class="sliding-card-content">
-                            <span><span class="slide-first-word">Simplifica</span> tareas repetitivas y reduce errores con flujos inteligentes.</span>
-                        </div>
-                    </div>
+                    <ul class="hero-points">
+                        <li>Dashboards de auditoría por sitio, equipo y fabricante.</li>
+                        <li>Cumplimiento técnico y operativo con evidencia exportable.</li>
+                        <li>Flujos de mantenimiento y cambios con menos intervención manual.</li>
+                    </ul>
                 </div>
-                
-                <div class="sliding-card">
-                    <div class="slide slide1">
-                        <div class="sliding-card-content">
-                            <span class="sliding-card-icon">
-                                <img class="sliding-card-pic-icon" src="img/ICON_config.png" alt="">
-                                Auditorías de configuración<br> y software
-                            </span>
-                        </div>
-                    </div>
-                    <div class="slide slide2">
-                        <div class="sliding-card-content">
-                            <span><span class="slide-first-word">Detecta</span> fallas, cambios y configuraciones fuera de estándar.</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="sliding-card">
-                    <div class="slide slide1">
-                        <div class="sliding-card-content">
-                            <span class="sliding-card-icon">
-                                <img class="sliding-card-pic-icon" src="img/ICON_visible.png" alt="">
-                                Visibilidad<br> total
-                            </span>
-                        </div>
-                    </div>
-                    <div class="slide slide2">
-                        <div class="sliding-card-content">
-                            <span><span class="slide-first-word">Visualiza</span> y controla tu infraestructura en una sola consola.</span>
-                        </div>
-                    </div>
+
+                <div class="hero-visual" aria-hidden="true">
+                    <img src="img/DASHB_main.png" alt="Dashboard principal de monitoreo y auditoría de red">
                 </div>
             </div>
         </section>
 
-        <section class="image-showcase-section">
-            <h2>Desde configuraciones hasta inventarios</h2>
-            <p>Manten el control sobre la totalidad de tu red.</p>
-            <div class="image-showcase-grid">
-                <div class="image-slot-1"></div>
-                <div class="image-slot-2"></div>
-                <div class="image-slot-3"></div>
-            </div>
-        </section>
-
-        <section class="floating-block-section">
-            <h2>Impacto Medible y Resultados Claros</h2>
-            <div class="floating-block-container">
-                <div class="floating-block-card">
-                    <h3 class="floating-block-card-title">80%</h3>
-                    <span class="floating-block-card-text"><span class="floating-block-card-first-word">Menos</span> errores</span>
-                </div>
-                <div class="floating-block-card">
-                    <h3 class="floating-block-card-title">70%</h3>
-                    <span class="floating-block-card-text"><span class="floating-block-card-first-word">Mas</span> visibilidad y control en la red</span>
-                </div>
-                <div class="floating-block-card">
-                    <h3 class="floating-block-card-title">50%</h3>
-                    <span class="floating-block-card-text"><span class="floating-block-card-first-word">Menos</span> tiempo en tareas repetitivas</span>
-                </div>
-            </div>
-            <h2>Porque una red moderna no solo se configura, se entiende y se optimiza.</h2>
-        </section>
-
-        <section class="info-grid-section">
-            <video src="vid/Section2_vid.mp4" autoplay muted loop></video>
-            <h2>Oktanet</h2>
-            <div class="info-grid-container">
-                <div class="info-grid-card grid-card-1">
-                    <span class="info-grid-card-text">Somos el equipo detrás de la evolución en automatización de redes.</span>
-                </div>
-                <div class="grid-card-2">
-                </div>
-                <div class="info-grid-card grid-card-3">
-                    <span class="info-grid-card-text">Oktanet nació al observar que muchas empresas sufrían por falta de visibilidad, tareas repetitivas y redes difíciles de administrar. Nuestro equipo de ingenieros hispanohablantes combina experiencia en redes, automatización y programación para crear soluciones adaptadas a cada entorno.</span>
-                </div>
-                <div class="info-grid-card grid-card-4">
-                    <span class="info-grid-card-text">Automatizar es liberar el potencial humano para enfocarse en la innovación.</span>
+        <section class="trust-strip" aria-label="Tecnologías compatibles">
+            <div class="container trust-grid">
+                <p>Compatible con infraestructura multi-vendor:</p>
+                <div class="trust-logos">
+                    <img src="img/LOGO_Cisco.png" alt="Cisco">
+                    <img src="img/LOGO_Juniper.png" alt="Juniper">
+                    <img src="img/LOGO_Arista.png" alt="Arista">
+                    <img src="img/LOGO_Extreme.png" alt="Extreme Networks">
+                    <img src="img/LOGO_Aruba.png" alt="Aruba">
+                    <img src="img/LOGO_Paloalto.png" alt="Palo Alto Networks">
+                    <img src="img/LOGO_Fortinet.png" alt="Fortinet">
                 </div>
             </div>
         </section>
 
-        <section class="stair-bpoint-section" id="OKTAVIA">
-            <h2 >Oktavia</h2>
-            <div class="stair-bpoint-container">
-                <span class="stair-bpoint-header">
-                    Automatización inteligente y visibilidad de red desarrollada por Oktanet, para simplificar la gestión de infraestructuras complejas y multimarca.
-                </span>
-                <div class="stair-bpoint-body">
-                    <div class="stair-bpoint-list">
-                        <ul>
-                            <li><img src="img/ICON_bullpoint.png" alt="">Auditorias de Red</li>
-                            <li><img src="img/ICON_bullpoint.png" alt="">Reportes Customizados</li>
-                            <li><img src="img/ICON_bullpoint.png" alt="">Descubrimiento de Redes</li>
-                            <li><img src="img/ICON_bullpoint.png" alt="">Cumplimiento de la Configuracion</li>
-                            <li><img src="img/ICON_bullpoint.png" alt="">Telemetria y Automatizacion de Tareas</li>
-                        </ul>
+        <section class="platform-section" id="plataforma">
+            <div class="container platform-grid">
+                <div class="platform-copy">
+                    <p class="eyebrow">Producto principal</p>
+                    <h2>Oktavia: visibilidad técnica profunda para redes empresariales.</h2>
+                    <p>
+                        Oktavia es la plataforma de automatización de Oktanet para equipos de networking que necesitan operar con precisión. Integra auditorías periódicas, validación de estándares, descubrimiento de topología y monitoreo de cambios en una sola consola.
+                    </p>
+                    <div class="chip-list" aria-label="Capacidades principales de Oktavia">
+                        <span>Auditoría de red</span>
+                        <span>Cumplimiento de configuración</span>
+                        <span>Control de versiones</span>
+                        <span>Descubrimiento L2/L3</span>
+                        <span>Reportes ejecutivos</span>
+                        <span>Inventario inteligente</span>
                     </div>
-                    <img src="img/DASHB_ConfComp.png" alt="">
                 </div>
-                <span class="stair-bpoint-footer">
-                    Con Oktavia, los equipos de red pueden visualizar, auditar y optimizar su infraestructura de forma centralizada, reduciendo tiempos operativos y eliminando la dependencia de herramientas fragmentadas o scripts manuales.
-                </span>
+                <div class="platform-visual" aria-hidden="true">
+                    <img src="img/DASHB_ConfComp.png" alt="Vista de cumplimiento de configuración en Oktavia">
+                </div>
             </div>
         </section>
 
-        <section class="bordeff-block-section">
-            <h2>Marcamos la diferencia</h2>
-            <div class="bordeff-block-container">
-                <div class="bordeff-block">Primera plataforma en español</div>
-                <div class="bordeff-block">Soporte especializado en español</div>
-                <div class="bordeff-block">Arquitectura abierta y flexible</div>
-            </div>
-            <div class="bordeff-endphrase">
-                Oktavia te ofrece el poder de las grandes soluciones internacionales, con la cercanía, soporte y personalización que solo una plataforma latinoamericana puede brindar.
+        <section class="services-section" id="servicios">
+            <div class="container">
+                <p class="eyebrow">Qué resolvemos</p>
+                <h2>Servicios para configurar, mantener y evolucionar tu red.</h2>
+                <div class="services-grid">
+                    <article class="service-card">
+                        <img src="img/ICON_visible.png" alt="Icono de visibilidad de red">
+                        <h3>Observabilidad de red</h3>
+                        <p>Unifica inventario, estado operativo y dependencia entre nodos para decisiones rápidas ante incidentes y cambios.</p>
+                    </article>
+                    <article class="service-card">
+                        <img src="img/ICON_config.png" alt="Icono de configuración">
+                        <h3>Compliance técnico</h3>
+                        <p>Detecta configuraciones fuera de estándar, diferencias entre sedes y desviaciones frente a plantillas aprobadas.</p>
+                    </article>
+                    <article class="service-card">
+                        <img src="img/ICON_automation.png" alt="Icono de automatización">
+                        <h3>Automatización operativa</h3>
+                        <p>Ejecuta tareas repetitivas de forma controlada para reducir errores humanos en respaldos, cambios y validaciones.</p>
+                    </article>
+                    <article class="service-card">
+                        <img src="img/ICON_visible.png" alt="Icono de inventario">
+                        <h3>Inventario técnico continuo</h3>
+                        <p>Consolida firmware, módulos, interfaces y estado por dispositivo para planificación de ciclos y capacidad.</p>
+                    </article>
+                    <article class="service-card">
+                        <img src="img/ICON_config.png" alt="Icono de topología">
+                        <h3>Topología y trazabilidad</h3>
+                        <p>Relaciona cambios de configuración con impacto en rutas y servicios críticos para análisis de causa raíz.</p>
+                    </article>
+                    <article class="service-card">
+                        <img src="img/ICON_automation.png" alt="Icono de soporte">
+                        <h3>Soporte especializado</h3>
+                        <p>Acompañamiento de ingeniería en español para despliegues, operación continua y estrategias de madurez de red.</p>
+                    </article>
+                </div>
             </div>
         </section>
 
-        <section class="brand-section">
-            <div class="brand-phrase">
-                <h2>Una Red.</h2>
-                <h2>Todas las Marcas.</h2>
-                <h2>Un Solo Control.</h2>
+        <section class="showcase-section" aria-label="Paneles de ejemplo">
+            <div class="container">
+                <h2>Paneles que convierten datos en acciones.</h2>
+                <p class="section-intro">Visualiza cumplimiento, inventario y topología con contexto técnico para acelerar análisis y priorización.</p>
+                <div class="showcase-grid">
+                    <figure>
+                        <img src="img/DASHB_ConfGen.png" alt="Dashboard de cumplimiento general">
+                        <figcaption>Gobierno de configuración por dominio, sitio y criticidad.</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="img/DASHB_Inventory.png" alt="Dashboard de inventario">
+                        <figcaption>Inventario consolidado de hardware y software en tiempo real.</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="img/DASHB_Topology.png" alt="Dashboard de topología">
+                        <figcaption>Topología dinámica para identificar riesgos y puntos de falla.</figcaption>
+                    </figure>
+                </div>
             </div>
-            <div class="brand-container">
-                <div class="brand-logos">
-                    <img src="img/LOGO_Cisco.png" alt="">
-                    <img src="img/LOGO_Juniper.png" alt="">
-                    <img src="img/LOGO_Arista.png" alt="">
-                    <img src="img/LOGO_Extreme.png" alt="">
-                    <img src="img/LOGO_Aruba.png" alt="">
-                    <img src="img/LOGO_Paloalto.png" alt="">
-                    <img src="img/LOGO_Fortinet.png" alt="">
+        </section>
+
+        <section class="method-section" id="metodologia">
+            <div class="container">
+                <p class="eyebrow">Cómo trabajamos</p>
+                <h2>Metodología de implementación enfocada en resultados operativos.</h2>
+                <div class="method-grid">
+                    <article>
+                        <span>01</span>
+                        <h3>Diagnóstico</h3>
+                        <p>Evaluamos arquitectura, prácticas de operación y puntos de fricción para definir alcance técnico realista.</p>
+                    </article>
+                    <article>
+                        <span>02</span>
+                        <h3>Diseño</h3>
+                        <p>Construimos políticas, plantillas y tableros alineados con estándares internos y objetivos del negocio.</p>
+                    </article>
+                    <article>
+                        <span>03</span>
+                        <h3>Despliegue</h3>
+                        <p>Integración gradual en entornos productivos, priorizando equipos críticos y minimizando riesgo operacional.</p>
+                    </article>
+                    <article>
+                        <span>04</span>
+                        <h3>Optimización</h3>
+                        <p>Iteramos automatizaciones, reportes y controles con métricas periódicas de mejora continua.</p>
+                    </article>
                 </div>
-                <div class="brand-protocols">
-                    <div>ISIS</div>
-                    <div>RIP</div>
-                    <div>OSPF</div>
-                    <div>EIGRP</div>
-                    <div>BGP</div>
-                    <div>SD WAN</div>
+            </div>
+        </section>
+
+        <section class="cases-section" id="casos">
+            <div class="container">
+                <p class="eyebrow">Casos de uso</p>
+                <h2>Aplicaciones comunes por tipo de organización.</h2>
+                <div class="cases-grid">
+                    <article>
+                        <h3>Corporativos multi-sede</h3>
+                        <p>Estandariza configuración y cumplimiento en decenas de oficinas con visibilidad centralizada por región.</p>
+                    </article>
+                    <article>
+                        <h3>Operadores y carriers</h3>
+                        <p>Reduce tiempos de diagnóstico con topología detallada y correlación de cambios en equipos de borde y core.</p>
+                    </article>
+                    <article>
+                        <h3>Sectores regulados</h3>
+                        <p>Genera evidencia de auditoría técnica para cumplimiento interno y revisiones de seguridad externa.</p>
+                    </article>
                 </div>
-                <div class="brand-services">
-                    <div>SYSLOG</div>
-                    <div>SFLOW</div>
-                    <div>NETFLOW</div>
+            </div>
+        </section>
+
+        <section class="metrics-section" aria-label="Impacto operativo">
+            <div class="container metrics-grid">
+                <article>
+                    <h3 class="counter" data-target="80" data-suffix="%">80%</h3>
+                    <p>menos tiempo invertido en revisiones manuales de configuración.</p>
+                </article>
+                <article>
+                    <h3 class="counter" data-target="70" data-suffix="%">70%</h3>
+                    <p>más visibilidad sobre cambios y desvíos críticos en la red.</p>
+                </article>
+                <article>
+                    <h3 class="counter" data-target="50" data-suffix="%">50%</h3>
+                    <p>reducción de tareas repetitivas mediante automatización guiada.</p>
+                </article>
+                <article>
+                    <h3 class="counter" data-target="24" data-suffix="/7">24/7</h3>
+                    <p>capacidad de auditoría continua para operaciones de alta disponibilidad.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="contact-section" id="contacto">
+            <div class="container contact-grid">
+                <div class="contact-copy">
+                    <p class="eyebrow">Conversemos</p>
+                    <h2>Diseña una operación de red más predecible con Oktanet.</h2>
+                    <p>
+                        Cuéntanos tu contexto técnico y objetivos. Nuestro equipo prepara una sesión de descubrimiento para definir alcance, tiempos y arquitectura recomendada.
+                    </p>
+                    <ul>
+                        <li>Evaluación inicial sin costo</li>
+                        <li>Enfoque multi-vendor</li>
+                        <li>Atención en español</li>
+                    </ul>
+                    <div class="office-card">
+                        <h3>Oficina principal</h3>
+                        <p>Torre de Oficinas, Downtown Reforma</p>
+                        <p>Ciudad de México</p>
+                        <p>contacto@oktanet.com</p>
+                    </div>
                 </div>
-                <div class="brand-hardware">
-                    <div>
-                        <img src="img/LOGO_Router.png" alt="">
-                        Router
-                    </div>
-                    <div>
-                        <img src="img/LOGO_Switch.png" alt="">
-                        Switch
-                    </div>
-                    <div>
-                        <img src="img/LOGO_Firewall.png" alt="">
-                        Firewall
-                    </div>
-                    <div>
-                        <img src="img/LOGO_WLC.png" alt="">
-                        WLC
-                    </div>
-                </div>
+
+                <form class="contact-form" action="https://formspree.io/f/mqarwnjw" method="post">
+                    <label for="name">Nombre completo</label>
+                    <input id="name" type="text" name="name" autocomplete="name" required>
+
+                    <label for="email">Correo electrónico</label>
+                    <input id="email" type="email" name="email" autocomplete="email" required>
+
+                    <label for="company">Empresa</label>
+                    <input id="company" type="text" name="company" autocomplete="organization" required>
+
+                    <label for="role">Rol</label>
+                    <input id="role" type="text" name="role" autocomplete="organization-title">
+
+                    <label for="message">¿Qué deseas resolver?</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+
+                    <button class="btn btn-primary" type="submit">Enviar solicitud</button>
+                </form>
             </div>
         </section>
     </main>
 
-    
-    <main class="contact-page">
-    </main>
-    
-    
-    <main class="pricing-page">
-    </main>
-    
-    <footer>
-        <div class="footer-info">
-            <div class="footer-info-title">
-                <img src="img/Oktanet_Logo_Textless.png" alt="">
-                <h4>OKTANET</h4>
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <img src="img/Oktanet_Logo_Textless.png" alt="Símbolo de Oktanet">
+                <div>
+                    <h4>OKTANET</h4>
+                    <p>Automatización y auditoría de redes empresariales.</p>
+                </div>
             </div>
-            <span>Torre de Oficinas</span>
-            <span>Downtown Reforma</span>
-            <span>Ciudad de Mexico</span>
+            <div class="footer-links">
+                <a href="#plataforma">Plataforma</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#metodologia">Metodología</a>
+                <a href="#casos">Casos de uso</a>
+                <a href="#contacto">Contacto</a>
+            </div>
+            <p class="copyright">© <span id="current-year"></span> Oktanet. Todos los derechos reservados.</p>
         </div>
-        <div class="footer-contact">
-            <h4>Rellena el formulario para ponerte en contacto con nuestro equipo de ventas.</h4>
-            <form action="https://formspree.io/f/mqarwnjw" method="post">
-                <input type="text" name="name" placeholder="Nombre Completo" required>
-                <input type="email" name="email" placeholder="Correo Electrónico" required>
-                <input type="text" name="company" placeholder="Compañia" required>
-                <textarea name="message" placeholder="Mensaje" required></textarea>
-                <button type="submit">Enviar</button>
-            </form>
-        </div>
-        <script src="script/home_script.js"></script>
     </footer>
+
+    <script src="script/home_script.js"></script>
 </body>
 </html>
