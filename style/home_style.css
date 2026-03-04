@@ -35,7 +35,7 @@ html {
 }
 
 body {
-    font-family: "Source Sans 3", "Trebuchet MS", sans-serif;
+    font-family: "Manrope", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
     color: var(--text-main);
     background: var(--bg-main);
     line-height: 1.45;
@@ -58,7 +58,7 @@ img {
 
 .eyebrow {
     margin: 0;
-    font-family: "Space Grotesk", "Segoe UI", sans-serif;
+    font-family: "Manrope", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
     text-transform: uppercase;
     letter-spacing: 0.08em;
     font-size: 0.82rem;
@@ -71,7 +71,7 @@ h2,
 h3,
 h4 {
     margin-top: 0;
-    font-family: "Space Grotesk", "Segoe UI", sans-serif;
+    font-family: "Manrope", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
     line-height: 1.2;
     color: var(--text-main);
 }
@@ -90,7 +90,7 @@ p {
     font-weight: 700;
     border-radius: 999px;
     border: 1px solid transparent;
-    font-family: "Space Grotesk", "Segoe UI", sans-serif;
+    font-family: "Manrope", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
     font-size: 0.92rem;
     cursor: pointer;
     transition: transform 180ms ease, box-shadow 220ms ease, background-color 220ms ease, border-color 220ms ease, color 220ms ease;
@@ -157,7 +157,7 @@ p {
 .main-nav a {
     position: relative;
     isolation: isolate;
-    font-family: "Space Grotesk", "Segoe UI", sans-serif;
+    font-family: "Manrope", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
     font-size: 0.9rem;
     font-weight: 600;
     color: #263852;
@@ -351,7 +351,7 @@ p {
 
 .trust-grid p {
     margin: 0;
-    font-family: "Space Grotesk", "Segoe UI", sans-serif;
+    font-family: "Manrope", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
     font-size: 0.86rem;
     font-weight: 600;
     letter-spacing: 0.04em;
@@ -561,6 +561,8 @@ p {
     color: #334c6b;
     font-size: 0.94rem;
     min-height: 70px;
+    font-weight: bold;
+    text-align: center;
 }
 
 .method-section {
@@ -625,7 +627,7 @@ p {
     display: inline-block;
     margin-bottom: 10px;
     font-size: 0.92rem;
-    font-family: "Space Grotesk", "Segoe UI", sans-serif;
+    font-family: "Manrope", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
     color: #0f6ca7;
 }
 
@@ -770,7 +772,7 @@ p {
 }
 
 .contact-form label {
-    font-family: "Space Grotesk", "Segoe UI", sans-serif;
+    font-family: "Manrope", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
     font-size: 0.9rem;
     font-weight: 600;
     color: #253f5e;
