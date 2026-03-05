@@ -14,7 +14,8 @@
     <header class="site-header" id="inicio">
         <div class="container nav-shell">
             <a class="brand" href="#page-top" aria-label="Ir al inicio">
-                <img src="img/Oktanet_Logo.png" alt="Logo de Oktanet">
+                <img src="img/Oktanet_Logo_Textless.png" alt="Logo de Oktanet">
+                <span class="brand-wordmark">Oktanet</span>
             </a>
 
             <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menú">
@@ -28,10 +29,21 @@
                 <a href="#servicios">Servicios</a>
                 <a href="#metodologia">Metodología</a>
                 <a href="#casos">Casos de uso</a>
+                <a href="#quienes-somos">Quiénes somos</a>
                 <a href="#contacto">Contacto</a>
             </nav>
 
-            <a class="btn btn-primary nav-cta" href="#contacto">Solicitar Demo</a>
+            <a class="btn btn-secondary nav-cta" href="#contacto">Solicitar Demo</a>
+            <div class="language-dropdown">
+                <button class="lang-toggle" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="lang-menu" aria-label="Cambiar idioma">
+                    <span class="lang-code">ES</span>
+                    <span class="lang-caret" aria-hidden="true"></span>
+                </button>
+                <div class="lang-menu" id="lang-menu" role="menu" hidden>
+                    <button class="lang-option" type="button" role="menuitemradio" data-lang="es" aria-checked="true">Español</button>
+                    <button class="lang-option" type="button" role="menuitemradio" data-lang="en" aria-checked="false">English</button>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -64,14 +76,27 @@
         <section class="trust-strip" aria-label="Tecnologías compatibles">
             <div class="container trust-grid">
                 <p>Compatible con infraestructura multi-vendor:</p>
-                <div class="trust-logos">
-                    <img src="img/LOGO_Cisco.png" alt="Cisco">
-                    <img src="img/LOGO_Juniper.png" alt="Juniper">
-                    <img src="img/LOGO_Arista.png" alt="Arista">
-                    <img src="img/LOGO_Extreme.png" alt="Extreme Networks">
-                    <img src="img/LOGO_Aruba.png" alt="Aruba">
-                    <img src="img/LOGO_Paloalto.png" alt="Palo Alto Networks">
-                    <img src="img/LOGO_Fortinet.png" alt="Fortinet">
+                <div class="trust-marquee">
+                    <div class="trust-logos">
+                        <div class="trust-logos-track">
+                            <img src="img/LOGO_Cisco.png" alt="Cisco">
+                            <img src="img/LOGO_Juniper.png" alt="Juniper">
+                            <img src="img/LOGO_Arista.png" alt="Arista">
+                            <img src="img/LOGO_Extreme.png" alt="Extreme Networks">
+                            <img src="img/LOGO_Aruba.png" alt="Aruba">
+                            <img src="img/LOGO_Paloalto.png" alt="Palo Alto Networks">
+                            <img src="img/LOGO_Fortinet.png" alt="Fortinet">
+                        </div>
+                        <div class="trust-logos-track" aria-hidden="true">
+                            <img src="img/LOGO_Cisco.png" alt="">
+                            <img src="img/LOGO_Juniper.png" alt="">
+                            <img src="img/LOGO_Arista.png" alt="">
+                            <img src="img/LOGO_Extreme.png" alt="">
+                            <img src="img/LOGO_Aruba.png" alt="">
+                            <img src="img/LOGO_Paloalto.png" alt="">
+                            <img src="img/LOGO_Fortinet.png" alt="">
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -230,6 +255,35 @@
             </div>
         </section>
 
+        <section class="about-section" id="quienes-somos">
+            <div class="container about-grid">
+                <div class="about-copy">
+                    <p class="eyebrow">Quiénes somos</p>
+                    <h2>Ingeniería de redes y software para operar infraestructura con control continuo.</h2>
+                    <p class="about-text">
+                        Oktanet nace para simplificar la gestión de redes heterogéneas a través de una consola inteligente que unifica automatización, visualización y control operativo. En un entorno donde las infraestructuras empresariales crecen en complejidad, con múltiples fabricantes, arquitecturas híbridas y operaciones cada vez más críticas para el negocio, los equipos de tecnología necesitan nuevas formas de operar sus redes con mayor velocidad, visibilidad y confiabilidad.
+                    </p>
+                    <p class="about-text">
+                        Somos un equipo de ingenieros especializados en redes, automatización y desarrollo de software, enfocados en resolver los desafíos reales que enfrentan las organizaciones modernas. En Oktanet desarrollamos tecnología que transforma la forma en que las empresas operan su infraestructura, pasando de procesos manuales y fragmentados a operaciones inteligentes basadas en automatización, telemetría y flujos de trabajo programables.
+                    </p>
+                </div>
+                <div class="about-pillars">
+                    <article class="about-card">
+                        <h3>Consola inteligente unificada</h3>
+                        <p>Integramos automatización, visualización y control operativo en una sola experiencia para redes multi-vendor.</p>
+                    </article>
+                    <article class="about-card">
+                        <h3>Ingeniería orientada a resultados</h3>
+                        <p>Combinamos experiencia en networking, automatización y software para resolver problemas técnicos de alto impacto.</p>
+                    </article>
+                    <article class="about-card">
+                        <h3>Operación programable basada en datos</h3>
+                        <p>Pasamos de tareas manuales a flujos inteligentes con telemetría continua y decisiones operativas más confiables.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
         <section class="contact-section" id="contacto">
             <div class="container contact-grid">
                 <div class="contact-copy">
@@ -283,9 +337,9 @@
                 <a href="#servicios">Servicios</a>
                 <a href="#metodologia">Metodología</a>
                 <a href="#casos">Casos de uso</a>
-                <a href="#contacto">Contacto</a>
+                <a href="#quienes-somos">Quiénes somos</a>
             </div>
-            <p class="copyright">© <span id="current-year"></span> Oktanet. Todos los derechos reservados.</p>
+            <p class="copyright">© <span id="current-year"></span> Oktanet. <span id="copyright-text">Todos los derechos reservados.</span></p>
         </div>
     </footer>
 
