@@ -1,6 +1,7 @@
 (function () {
     const body = document.body;
     const brandLink = document.querySelector('.brand');
+    const navShell = document.querySelector('.nav-shell');
     const navToggle = document.querySelector('.nav-toggle');
     const mainNav = document.querySelector('.main-nav');
     const navLinks = document.querySelectorAll('.main-nav a');
@@ -17,7 +18,9 @@
     const trustStrip = document.querySelector('.trust-strip');
     const showcaseSectionEl = document.querySelector('.showcase-section');
     const metricsSectionLabelEl = document.querySelector('.metrics-section');
+    const heroBadgesContainer = document.querySelector('.hero-badges');
     const brandImage = document.querySelector('.brand img');
+    const brandWordmark = document.querySelector('.brand-wordmark');
     const heroImage = document.querySelector('.hero-visual img');
     const platformImage = document.querySelector('.platform-visual img');
     const serviceIcons = document.querySelectorAll('.services-grid .service-card img');
@@ -81,6 +84,8 @@
             heroTitle: 'Automatiza, audita y optimiza toda tu infraestructura desde un solo panel.',
             heroBody: 'Oktanet centraliza visibilidad de inventario, cumplimiento de configuración, cambios de software y topología para que tu equipo pase de operar en modo reactivo a trabajar con control continuo.',
             heroActions: ['Hablar con ventas', 'Conocer Oktavia'],
+            heroBadgesAria: 'Puntos clave de la plataforma',
+            heroBadges: ['Multi-vendor listo', 'Auditoría continua', 'Automatización guiada'],
             heroPoints: [
                 'Dashboards de auditoría por sitio, equipo y fabricante.',
                 'Cumplimiento técnico y operativo con evidencia exportable.',
@@ -213,6 +218,8 @@
             heroTitle: 'Automate, audit, and optimize your entire infrastructure from one dashboard.',
             heroBody: 'Oktanet centralizes inventory visibility, configuration compliance, software changes, and topology so your team can move from reactive operations to continuous control.',
             heroActions: ['Talk to Sales', 'Explore Oktavia'],
+            heroBadgesAria: 'Platform highlights',
+            heroBadges: ['Multi-vendor ready', 'Continuous auditing', 'Guided automation'],
             heroPoints: [
                 'Audit dashboards by site, device, and vendor.',
                 'Technical and operational compliance with exportable evidence.',
@@ -333,6 +340,24 @@
         navToggle.setAttribute('aria-label', isOpen ? copy.navToggleClose : copy.navToggleOpen);
     };
 
+    const updateBrandWordmarkVisibility = function () {
+        if (!navShell || !brandWordmark) {
+            return;
+        }
+
+        // Keep the wordmark on mobile menu layout; collapse it only on desktop before overlap.
+        if (window.innerWidth <= 860) {
+            navShell.classList.remove('nav-compact-brand');
+            return;
+        }
+
+        navShell.classList.remove('nav-compact-brand');
+
+        if (navShell.scrollWidth > navShell.clientWidth + 10) {
+            navShell.classList.add('nav-compact-brand');
+        }
+    };
+
     const applyLanguage = function (languageKey) {
         const selectedKey = translations[languageKey] ? languageKey : 'es';
         const copy = translations[selectedKey];
@@ -377,6 +402,10 @@
         setText(document.querySelector('.hero-copy h1'), copy.heroTitle);
         setText(document.querySelector('.hero-copy > p:not(.eyebrow)'), copy.heroBody);
         setTextList(document.querySelectorAll('.hero-actions a'), copy.heroActions);
+        if (heroBadgesContainer) {
+            heroBadgesContainer.setAttribute('aria-label', copy.heroBadgesAria);
+        }
+        setTextList(document.querySelectorAll('.hero-badges span'), copy.heroBadges);
         setTextList(document.querySelectorAll('.hero-points li'), copy.heroPoints);
 
         setText(document.querySelector('.trust-grid > p'), copy.trustLabel);
@@ -451,6 +480,7 @@
         });
 
         updateNavToggleLabel(selectedKey);
+        requestAnimationFrame(updateBrandWordmarkVisibility);
 
         try {
             window.localStorage.setItem(storageKey, selectedKey);
@@ -531,6 +561,7 @@
     }
 
     applyLanguage(initialLanguage);
+    requestAnimationFrame(updateBrandWordmarkVisibility);
 
     if (currentYear) {
         currentYear.textContent = String(new Date().getFullYear());
@@ -562,6 +593,14 @@
             if (window.innerWidth > 860) {
                 closeNav();
             }
+
+            updateBrandWordmarkVisibility();
+        });
+    }
+
+    if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(function () {
+            updateBrandWordmarkVisibility();
         });
     }
 
