@@ -27,6 +27,7 @@
     const showcaseImages = document.querySelectorAll('.showcase-grid img');
     const footerLogo = document.querySelector('.footer-brand img');
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const globalAnimationDelayMs = 140;
     const storageKey = 'oktanet-language';
 
     const setText = function (element, text) {
@@ -80,6 +81,9 @@
             trustAria: 'Tecnologías compatibles',
             showcaseAria: 'Paneles de ejemplo',
             metricsAria: 'Impacto operativo',
+            metricsEyebrow: 'Impacto medible',
+            metricsTitle: 'Resultados operativos que se reflejan desde las primeras iteraciones.',
+            metricsIntro: 'Métricas observadas en proyectos de automatización, auditoría y control continuo multi-vendor.',
             heroEyebrow: 'Operación de red para equipos modernos',
             heroTitle: 'Automatiza, audita y optimiza toda tu infraestructura desde un solo panel.',
             heroBody: 'Oktanet centraliza visibilidad de inventario, cumplimiento de configuración, cambios de software y topología para que tu equipo pase de operar en modo reactivo a trabajar con control continuo.',
@@ -214,6 +218,9 @@
             trustAria: 'Compatible technologies',
             showcaseAria: 'Sample dashboards',
             metricsAria: 'Operational impact',
+            metricsEyebrow: 'Measurable impact',
+            metricsTitle: 'Operational outcomes visible from the first implementation cycles.',
+            metricsIntro: 'Metrics observed across multi-vendor automation, auditing, and continuous-control projects.',
             heroEyebrow: 'Network operations for modern teams',
             heroTitle: 'Automate, audit, and optimize your entire infrastructure from one dashboard.',
             heroBody: 'Oktanet centralizes inventory visibility, configuration compliance, software changes, and topology so your team can move from reactive operations to continuous control.',
@@ -434,6 +441,9 @@
         setTextList(document.querySelectorAll('.cases-grid h3'), copy.caseTitles);
         setTextList(document.querySelectorAll('.cases-grid p'), copy.caseBodies);
 
+        setText(document.querySelector('.metrics-copy .eyebrow'), copy.metricsEyebrow);
+        setText(document.querySelector('.metrics-copy h2'), copy.metricsTitle);
+        setText(document.querySelector('.metrics-copy .section-intro'), copy.metricsIntro);
         setTextList(document.querySelectorAll('.metrics-grid article p'), copy.metricsBodies);
 
         setText(document.querySelector('.about-section .eyebrow'), copy.aboutEyebrow);
@@ -607,7 +617,7 @@
     const revealTargets = document.querySelectorAll(
         '.hero-copy, .hero-visual, .platform-copy, .platform-visual, .about-copy, ' +
         '.services-section .service-card, .showcase-section .showcase-grid figure, ' +
-        '.cases-section .cases-grid article, .metrics-section .metrics-grid article, .contact-copy, .contact-form, .footer-brand, .footer-links'
+        '.cases-section .cases-grid article, .metrics-copy, .metrics-section .metrics-grid article, .contact-copy, .contact-form, .footer-brand, .footer-links'
     );
 
     if (revealTargets.length > 0) {
@@ -615,7 +625,7 @@
 
         revealTargets.forEach(function (element, index) {
             element.classList.add('reveal');
-            element.style.setProperty('--reveal-delay', String((index % 4) * 70) + 'ms');
+            element.style.setProperty('--reveal-delay', String(globalAnimationDelayMs + (index % 4) * 70) + 'ms');
         });
 
         if (prefersReducedMotion || typeof IntersectionObserver === 'undefined') {
@@ -683,7 +693,7 @@
 
     if (serviceSection && serviceCards.length > 0) {
         serviceSection.classList.add('block-fade-ready');
-        const serviceStartDelayMs = 90;
+        const serviceStartDelayMs = 90 + globalAnimationDelayMs;
 
         serviceCards.forEach(function (card, index) {
             card.style.setProperty('--block-delay', String(serviceStartDelayMs + index * 80) + 'ms');
@@ -710,7 +720,7 @@
 
     if (casesSection && caseCards.length > 0) {
         casesSection.classList.add('block-fade-ready');
-        const casesStartDelayMs = 90;
+        const casesStartDelayMs = 90 + globalAnimationDelayMs;
 
         caseCards.forEach(function (card, index) {
             card.style.setProperty('--block-delay', String(casesStartDelayMs + index * 95) + 'ms');
@@ -737,7 +747,7 @@
 
     if (methodSection && dominoItems.length > 0) {
         methodSection.classList.add('domino-ready');
-        const dominoStartDelayMs = 150;
+        const dominoStartDelayMs = 150 + globalAnimationDelayMs;
 
         dominoItems.forEach(function (item, index) {
             item.style.setProperty('--domino-delay', String(dominoStartDelayMs + index * 130) + 'ms');
@@ -764,7 +774,7 @@
 
     if (aboutSection && aboutCards.length > 0) {
         aboutSection.classList.add('about-float-ready');
-        const aboutStartDelayMs = 140;
+        const aboutStartDelayMs = 140 + globalAnimationDelayMs;
 
         aboutCards.forEach(function (card, index) {
             card.style.setProperty('--about-delay', String(aboutStartDelayMs + index * 130) + 'ms');
@@ -790,17 +800,30 @@
     const counters = document.querySelectorAll('.counter');
 
     if (metricsSection && counters.length > 0) {
+        const setMetricRingProgress = function (counter, value) {
+            const card = counter.closest('.metric-card');
+
+            if (!card || !card.classList.contains('metric-percent')) {
+                return;
+            }
+
+            const safeValue = Math.max(0, Math.min(100, Number(value) || 0));
+            card.style.setProperty('--ring-progress', String(safeValue));
+        };
+
         const setCounterToFinalValue = function (counter) {
             const target = Number(counter.dataset.target || 0);
             const suffix = counter.dataset.suffix || '';
             counter.classList.remove('is-typing');
             counter.textContent = String(target) + suffix;
+            setMetricRingProgress(counter, target);
         };
 
         const setCounterToStartValue = function (counter) {
             const suffix = counter.dataset.suffix || '';
             counter.classList.remove('is-typing');
             counter.textContent = suffix === '/7' ? '' : '0' + suffix;
+            setMetricRingProgress(counter, 0);
         };
 
         let metricsAnimationCycle = 0;
@@ -826,6 +849,7 @@
                 const eased = 1 - Math.pow(1 - progress, 3);
                 const value = Math.round(target * eased);
                 counter.textContent = String(value) + suffix;
+                setMetricRingProgress(counter, value);
 
                 if (progress < 1) {
                     window.requestAnimationFrame(step);
@@ -833,6 +857,7 @@
                 }
 
                 counter.textContent = String(target) + suffix;
+                setMetricRingProgress(counter, target);
             };
 
             window.requestAnimationFrame(step);
@@ -877,7 +902,7 @@
         const runMetricsAnimations = function () {
             metricsAnimationCycle += 1;
             const cycleId = metricsAnimationCycle;
-            const startDelayMs = 90;
+            const startDelayMs = 90 + globalAnimationDelayMs;
             const stepDelayMs = 110;
 
             counters.forEach(setCounterToStartValue);
