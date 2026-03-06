@@ -87,7 +87,7 @@
             heroEyebrow: 'Operación de red para equipos modernos',
             heroTitle: 'Automatiza, audita y optimiza toda tu infraestructura desde un solo panel.',
             heroBody: 'Oktanet centraliza visibilidad de inventario, cumplimiento de configuración, cambios de software y topología para que tu equipo pase de operar en modo reactivo a trabajar con control continuo.',
-            heroActions: ['Hablar con ventas', 'Conocer Oktavia'],
+            heroActions: ['Solicitar una Demo', 'Conocer Oktavia'],
             heroBadgesAria: 'Puntos clave de la plataforma',
             heroBadges: ['Multi-vendor listo', 'Auditoría continua', 'Automatización guiada'],
             heroPoints: [
@@ -224,7 +224,7 @@
             heroEyebrow: 'Network operations for modern teams',
             heroTitle: 'Automate, audit, and optimize your entire infrastructure from one dashboard.',
             heroBody: 'Oktanet centralizes inventory visibility, configuration compliance, software changes, and topology so your team can move from reactive operations to continuous control.',
-            heroActions: ['Talk to Sales', 'Explore Oktavia'],
+            heroActions: ['Request a Demo', 'Explore Oktavia'],
             heroBadgesAria: 'Platform highlights',
             heroBadges: ['Multi-vendor ready', 'Continuous auditing', 'Guided automation'],
             heroPoints: [
