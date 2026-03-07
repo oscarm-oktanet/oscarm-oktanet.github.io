@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Oktanet ayuda a equipos de TI a automatizar, auditar y mantener redes empresariales con dashboards detallados y operación centralizada.">
-    <title>Oktanet | Automatización y Auditoría de Redes</title>
+    <meta name="description" content="Oktavia unifica discovery, compliance y generación de configs intended con jobs asíncronos, artifacts versionables y operación auditable para redes empresariales.">
+    <title>Oktavia | Compliance, Discovery y Configs Intended</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
@@ -55,19 +55,19 @@
         <section class="hero-section">
             <div class="container hero-grid">
                 <div class="hero-copy">
-                    <p class="eyebrow">Operación de red para equipos modernos</p>
-                    <h1>Automatiza, audita y optimiza toda tu infraestructura desde un solo panel.</h1>
+                    <p class="eyebrow">Network automation segura y auditable</p>
+                    <h1>Estandariza discovery, compliance y configs intended desde una sola plataforma.</h1>
                     <p>
-                        Oktanet centraliza visibilidad de inventario, cumplimiento de configuración, cambios de software y topología para que tu equipo pase de operar en modo reactivo a trabajar con control continuo.
+                        Oktavia combina un Automation Engine (FastAPI) y una UI web simple (Django + SQLite por default) para ejecutar flujos de red con control, trazabilidad y evidencia exportable.
                     </p>
                     <div class="hero-actions">
                         <a class="btn btn-primary" href="#contacto">Solicitar una Demo</a>
                         <a class="btn btn-secondary" href="#plataforma">Conocer Oktavia</a>
                     </div>
                     <ul class="hero-points">
-                        <li>Dashboards de auditoría por sitio, equipo y fabricante.</li>
-                        <li>Cumplimiento técnico y operativo con evidencia exportable.</li>
-                        <li>Flujos de mantenimiento y cambios con menos intervención manual.</li>
+                        <li>Modelo por jobs asíncronos con artifacts versionables (JSON/CSV/CFG).</li>
+                        <li>Sin cambios directos en red: primero se generan artifacts intended.</li>
+                        <li>Remediación controlada con validación y aprobación previa.</li>
                     </ul>
                 </div>
 
@@ -123,17 +123,17 @@
             <div class="container platform-grid">
                 <div class="platform-copy">
                     <p class="eyebrow">Producto principal</p>
-                    <h2>Oktavia: visibilidad técnica profunda para redes empresariales.</h2>
+                    <h2>Oktavia: Automation Engine + UI para operar redes con control continuo.</h2>
                     <p>
-                        Oktavia es la plataforma de automatización de Oktanet para equipos de networking que necesitan operar con precisión. Integra auditorías periódicas, validación de estándares, descubrimiento de topología y monitoreo de cambios en una sola consola.
+                        Diseñada para despliegues simples y demos, con arquitectura preparada para backend externo, Oktavia integra discovery multivendor, compliance por sitio/dispositivo y config generation intended en una sola consola.
                     </p>
                     <div class="chip-list" aria-label="Capacidades principales de Oktavia">
-                        <span>Auditoría de red</span>
-                        <span>Cumplimiento de configuración</span>
-                        <span>Control de versiones</span>
-                        <span>Descubrimiento L2/L3</span>
-                        <span>Reportes ejecutivos</span>
-                        <span>Inventario inteligente</span>
+                        <span>Jobs asíncronos</span>
+                        <span>Artifacts versionables</span>
+                        <span>Discovery NAPALM + pyATS</span>
+                        <span>Compliance Rules editables</span>
+                        <span>Config Generator con Jinja</span>
+                        <span>API REST con API key</span>
                     </div>
                 </div>
                 <div class="platform-visual" aria-hidden="true">
@@ -148,38 +148,38 @@
 
         <section class="services-section" id="servicios">
             <div class="container">
-                <p class="eyebrow">Qué resolvemos</p>
-                <h2>Servicios para configurar, mantener y evolucionar tu red.</h2>
+                <p class="eyebrow">Capacidades de la plataforma</p>
+                <h2>Módulos diseñados para discovery, compliance y operación trazable.</h2>
                 <div class="services-grid">
                     <article class="service-card">
                         <img src="img/ICON_visible.png" alt="Icono de visibilidad de red">
-                        <h3>Observabilidad de red</h3>
-                        <p>Unifica inventario, estado operativo y dependencia entre nodos para decisiones rápidas ante incidentes y cambios.</p>
+                        <h3>Discovery multivendor</h3>
+                        <p>Recolecta y normaliza datos de red para una base operativa consistente por sitio, role y dispositivo.</p>
                     </article>
                     <article class="service-card">
                         <img src="img/ICON_config.png" alt="Icono de configuración">
-                        <h3>Compliance técnico</h3>
-                        <p>Detecta configuraciones fuera de estándar, diferencias entre sedes y desviaciones frente a plantillas aprobadas.</p>
+                        <h3>Compliance Tests + Rules</h3>
+                        <p>Evalúa cumplimiento por sitio/dispositivo con reglas editables y evidencia exportable para auditoría.</p>
                     </article>
                     <article class="service-card">
                         <img src="img/ICON_automation.png" alt="Icono de automatización">
-                        <h3>Automatización operativa</h3>
-                        <p>Ejecuta tareas repetitivas de forma controlada para reducir errores humanos en respaldos, cambios y validaciones.</p>
+                        <h3>Config Generator intended</h3>
+                        <p>Genera configuraciones desde templates Jinja y service vars sin aplicar cambios directos no controlados.</p>
                     </article>
                     <article class="service-card">
                         <img src="img/ICON_inventory.png" alt="Icono de inventario">
-                        <h3>Inventario técnico continuo</h3>
-                        <p>Consolida firmware, módulos, interfaces y estado por dispositivo para planificación de ciclos y capacidad.</p>
+                        <h3>Telemetría e inventario</h3>
+                        <p>Combina inventario técnico, métricas operativas e historial para análisis de tendencias y operación diaria.</p>
                     </article>
                     <article class="service-card">
                         <img src="img/ICON_topology.png" alt="Icono de topología">
-                        <h3>Topología y trazabilidad</h3>
-                        <p>Relaciona cambios de configuración con impacto en rutas y servicios críticos para análisis de causa raíz.</p>
+                        <h3>Topology + Digital Twin</h3>
+                        <p>Visualiza red física/control-plane y compara snapshots para detectar drift y cambios propuestos.</p>
                     </article>
                     <article class="service-card">
                         <img src="img/ICON_support.png" alt="Icono de soporte">
-                        <h3>Soporte especializado</h3>
-                        <p>Acompañamiento de ingeniería en español para despliegues, operación continua y estrategias de madurez de red.</p>
+                        <h3>Scheduler y API de jobs</h3>
+                        <p>Programa runs, descarga artifacts por job y automatiza flujos vía API extensible con endpoints de soporte.</p>
                     </article>
                 </div>
             </div>
@@ -187,8 +187,8 @@
 
         <section class="showcase-section" aria-label="Paneles de ejemplo">
             <div class="container">
-                <h2>Paneles que convierten datos en acciones.</h2>
-                <p class="section-intro">Visualiza cumplimiento, inventario y topología con contexto técnico para acelerar análisis y priorización.</p>
+                <h2>UI pensada para operar flujos complejos con una experiencia simple.</h2>
+                <p class="section-intro">Desde compliance y config generation hasta topología, routing e inteligencia IP, cada módulo produce resultados accionables.</p>
                 <div class="showcase-grid">
                     <figure>
                         <picture>
@@ -196,7 +196,7 @@
                             <source srcset="img/DASHB_ConfGen-opt.webp" type="image/webp">
                             <img src="img/DASHB_ConfGen-opt.png" alt="Dashboard de cumplimiento general" width="1000" height="507" loading="lazy" decoding="async">
                         </picture>
-                        <figcaption>Gobierno de configuración por dominio, sitio y criticidad.</figcaption>
+                        <figcaption>Cumplimiento por dominio, sitio y criticidad con rules y tests editables.</figcaption>
                     </figure>
                     <figure>
                         <picture>
@@ -204,7 +204,7 @@
                             <source srcset="img/DASHB_Inventory-opt.webp" type="image/webp">
                             <img src="img/DASHB_Inventory-opt.png" alt="Dashboard de inventario" width="1200" height="709" loading="lazy" decoding="async">
                         </picture>
-                        <figcaption>Inventario consolidado de hardware y software en tiempo real.</figcaption>
+                        <figcaption>Inventario técnico consolidado con trazabilidad de software, hardware y metadatos.</figcaption>
                     </figure>
                     <figure>
                         <picture>
@@ -212,36 +212,58 @@
                             <source srcset="img/DASHB_Topology-opt.webp" type="image/webp">
                             <img src="img/DASHB_Topology-opt.png" alt="Dashboard de topología" width="1000" height="466" loading="lazy" decoding="async">
                         </picture>
-                        <figcaption>Topología dinámica para identificar riesgos y puntos de falla.</figcaption>
+                        <figcaption>Topología física/control-plane y vistas de routing (BGP/OSPF) para análisis de impacto.</figcaption>
                     </figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="feature-focus-section" aria-label="Capacidades destacadas">
+            <div class="container">
+                <p class="eyebrow">Capacidades destacadas</p>
+                <h2>Telemetry, Digital Twin y Config Generator como núcleo operativo.</h2>
+                <p class="section-intro">Estos tres módulos aceleran diagnóstico, reducen riesgo de cambio y mejoran trazabilidad en cada ejecución.</p>
+                <div class="feature-focus-grid">
+                    <article class="feature-focus-card">
+                        <h3>Telemetría operativa</h3>
+                        <p>Centraliza métricas, tendencias e historial para detectar anomalías y priorizar acciones de forma proactiva.</p>
+                    </article>
+                    <article class="feature-focus-card">
+                        <h3>Digital Twin y drift</h3>
+                        <p>Compara snapshots por dispositivo para identificar desviaciones, validar impacto y proponer cambios con evidencia.</p>
+                    </article>
+                    <article class="feature-focus-card">
+                        <h3>Config Generator intended</h3>
+                        <p>Produce configuraciones desde templates Jinja y service vars, manteniendo control antes de cualquier remediación.</p>
+                    </article>
                 </div>
             </div>
         </section>
 
         <section class="method-section" id="metodologia">
             <div class="container">
-                <p class="eyebrow">Cómo trabajamos</p>
-                <h2>Metodología de implementación enfocada en resultados operativos.</h2>
+                <p class="eyebrow">Modelo de ejecución</p>
+                <h2>Operación basada en jobs asíncronos, artifacts y aprobación.</h2>
                 <div class="method-grid">
                     <article>
                         <span>01</span>
-                        <h3>Diagnóstico</h3>
-                        <p>Evaluamos arquitectura, prácticas de operación y puntos de fricción para definir alcance técnico realista.</p>
+                        <h3>Discovery</h3>
+                        <p>Recolectamos y normalizamos estado de red por site/device para construir una línea base confiable.</p>
                     </article>
                     <article>
                         <span>02</span>
-                        <h3>Diseño</h3>
-                        <p>Construimos políticas, plantillas y tableros alineados con estándares internos y objetivos del negocio.</p>
+                        <h3>Compliance</h3>
+                        <p>Ejecutamos tests contra reglas editables para identificar desvíos y priorizar remediación controlada.</p>
                     </article>
                     <article>
                         <span>03</span>
-                        <h3>Despliegue</h3>
-                        <p>Integración gradual en entornos productivos, priorizando equipos críticos y minimizando riesgo operacional.</p>
+                        <h3>Intended Configs</h3>
+                        <p>Generamos artifacts versionables (JSON/CSV/CFG) antes de cualquier cambio en infraestructura.</p>
                     </article>
                     <article>
                         <span>04</span>
-                        <h3>Optimización</h3>
-                        <p>Iteramos automatizaciones, reportes y controles con métricas periódicas de mejora continua.</p>
+                        <h3>Validación y aprobación</h3>
+                        <p>Aplicamos cambios solo con control operativo, trazabilidad completa y seguimiento de drift.</p>
                     </article>
                 </div>
             </div>
@@ -250,19 +272,19 @@
         <section class="cases-section" id="casos">
             <div class="container">
                 <p class="eyebrow">Casos de uso</p>
-                <h2>Aplicaciones comunes por tipo de organización.</h2>
+                <h2>Aplicaciones reales en operación de redes empresariales.</h2>
                 <div class="cases-grid">
                     <article>
-                        <h3>Corporativos multi-sede</h3>
-                        <p>Estandariza configuración y cumplimiento en decenas de oficinas con visibilidad centralizada por región.</p>
+                        <h3>Auditorías de compliance</h3>
+                        <p>Evalúa cumplimiento por sitio o dispositivo sin procesos manuales y con evidencia exportable.</p>
                     </article>
                     <article>
-                        <h3>Operadores y carriers</h3>
-                        <p>Reduce tiempos de diagnóstico con topología detallada y correlación de cambios en equipos de borde y core.</p>
+                        <h3>Configs intended</h3>
+                        <p>Genera configuraciones desde templates y service vars para reducir riesgo operativo en cambios.</p>
                     </article>
                     <article>
-                        <h3>Sectores regulados</h3>
-                        <p>Genera evidencia de auditoría técnica para cumplimiento interno y revisiones de seguridad externa.</p>
+                        <h3>Dashboards técnicos</h3>
+                        <p>Visualiza inventario, topología, routing y tendencias para acelerar diagnóstico y priorización.</p>
                     </article>
                 </div>
             </div>
@@ -272,8 +294,8 @@
             <div class="container metrics-wrap">
                 <div class="metrics-copy">
                     <p class="eyebrow">Impacto medible</p>
-                    <h2>Resultados operativos que se reflejan desde las primeras iteraciones.</h2>
-                    <p class="section-intro">Métricas observadas en proyectos de automatización, auditoría y control continuo multi-vendor.</p>
+                    <h2>Resultados operativos desde las primeras iteraciones de adopción.</h2>
+                    <p class="section-intro">Métricas de referencia en equipos que migran de procesos manuales a flujos controlados con artifacts.</p>
                 </div>
                 <div class="metrics-grid">
                     <article class="metric-card metric-percent">
@@ -282,7 +304,7 @@
                                 <h3 class="counter" data-target="80" data-suffix="%">80%</h3>
                             </div>
                         </div>
-                        <p>menos tiempo invertido en revisiones manuales de configuración.</p>
+                        <p>menos tiempo en revisiones manuales de compliance y configuración.</p>
                     </article>
                     <article class="metric-card metric-percent">
                         <div class="metric-head">
@@ -290,7 +312,7 @@
                                 <h3 class="counter" data-target="70" data-suffix="%">70%</h3>
                             </div>
                         </div>
-                        <p>más visibilidad sobre cambios y desvíos críticos en la red.</p>
+                        <p>más visibilidad sobre desvíos y drift por sitio, rol y dispositivo.</p>
                     </article>
                     <article class="metric-card metric-percent">
                         <div class="metric-head">
@@ -298,7 +320,7 @@
                                 <h3 class="counter" data-target="50" data-suffix="%">50%</h3>
                             </div>
                         </div>
-                        <p>reducción de tareas repetitivas mediante automatización guiada.</p>
+                        <p>menos tareas repetitivas con jobs programados y artifacts descargables.</p>
                     </article>
                     <article class="metric-card">
                         <div class="metric-head">
@@ -306,7 +328,7 @@
                                 <h3 class="counter" data-target="24" data-suffix="/7">24/7</h3>
                             </div>
                         </div>
-                        <p>capacidad de auditoría continua para operaciones de alta disponibilidad.</p>
+                        <p>capacidad de operación trazable 24/7 con validación y aprobación previa.</p>
                     </article>
                 </div>
             </div>
@@ -315,27 +337,27 @@
         <section class="about-section" id="quienes-somos">
             <div class="container about-grid">
                 <div class="about-copy">
-                    <p class="eyebrow">Quiénes somos</p>
-                    <h2>Ingeniería de redes y software para operar infraestructura con control continuo.</h2>
+                    <p class="eyebrow">Arquitectura y enfoque</p>
+                    <h2>Automation segura, auditable y extensible para entornos multi-vendor.</h2>
                     <p class="about-text">
-                        Oktanet nace para simplificar la gestión de redes heterogéneas a través de una consola inteligente que unifica automatización, visualización y control operativo. En un entorno donde las infraestructuras empresariales crecen en complejidad, con múltiples fabricantes, arquitecturas híbridas y operaciones cada vez más críticas para el negocio, los equipos de tecnología necesitan nuevas formas de operar sus redes con mayor velocidad, visibilidad y confiabilidad.
+                        Oktavia no busca reemplazar un NMS de monitoreo en tiempo real. Su foco es estandarizar discovery, compliance y generación de intended configs con un modelo de ejecución controlado y trazable.
                     </p>
                     <p class="about-text">
-                        Somos un equipo de ingenieros especializados en redes, automatización y desarrollo de software, enfocados en resolver los desafíos reales que enfrentan las organizaciones modernas. En Oktanet desarrollamos tecnología que transforma la forma en que las empresas operan su infraestructura, pasando de procesos manuales y fragmentados a operaciones inteligentes basadas en automatización, telemetría y flujos de trabajo programables.
+                        La arquitectura separa UI y Automation Engine para facilitar despliegues simples (SQLite por default) y evolución a backends externos sin perder compatibilidad de API ni trazabilidad de artifacts.
                     </p>
                 </div>
                 <div class="about-pillars">
                     <article class="about-card">
-                        <h3>Consola inteligente unificada</h3>
-                        <p>Integramos automatización, visualización y control operativo en una sola experiencia para redes multi-vendor.</p>
+                        <h3>Extensibilidad por vendor</h3>
+                        <p>Cada fabricante se integra con adapter de discovery, normalizador, reglas de compliance y templates Jinja.</p>
                     </article>
                     <article class="about-card">
-                        <h3>Ingeniería orientada a resultados</h3>
-                        <p>Combinamos experiencia en networking, automatización y software para resolver problemas técnicos de alto impacto.</p>
+                        <h3>Scope y no-objetivos claros</h3>
+                        <p>Prioriza remediación supervisada con aprobación, evitando automatizaciones opacas y no auditables.</p>
                     </article>
                     <article class="about-card">
-                        <h3>Operación programable basada en datos</h3>
-                        <p>Pasamos de tareas manuales a flujos inteligentes con telemetría continua y decisiones operativas más confiables.</p>
+                        <h3>Licenciamiento Core / Pro</h3>
+                        <p>Core cubre compliance e inventario; Pro agrega observabilidad avanzada, scheduler y Digital Twin.</p>
                     </article>
                 </div>
             </div>
@@ -345,19 +367,18 @@
             <div class="container contact-grid">
                 <div class="contact-copy">
                     <p class="eyebrow">Conversemos</p>
-                    <h2>Diseña una operación de red más predecible con Oktanet.</h2>
+                    <h2>Evalúa Oktavia en un entorno controlado y orientado a resultados.</h2>
                     <p>
-                        Cuéntanos tu contexto técnico y objetivos. Nuestro equipo prepara una sesión de descubrimiento para definir alcance, tiempos y arquitectura recomendada.
+                        Comparte tu contexto técnico para diseñar un quickstart de discovery, compliance y config generation en tu entorno actual.
                     </p>
                     <ul>
-                        <li>Enfoque multi-vendor</li>
-                        <li>Atención en español</li>
+                        <li>API REST con autenticación por X-API-Key</li>
+                        <li>Despliegue simple con opción de backend externo</li>
                     </ul>
                     <div class="office-card">
                         <h3>Oficina principal</h3>
                         <p>Torre de Oficinas, Downtown Reforma</p>
                         <p>Ciudad de México</p>
-                        <p>...</p>
                     </div>
                 </div>
 
@@ -390,7 +411,7 @@
                 </picture>
                 <div>
                     <h4>OKTANET</h4>
-                    <p>Automatización inteligente para redes empresariales.</p>
+                    <p>Oktavia: automation, compliance y discovery para redes empresariales.</p>
                 </div>
             </div>
             <div class="footer-links">

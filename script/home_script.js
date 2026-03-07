@@ -17,6 +17,7 @@
     const copyrightText = document.getElementById('copyright-text');
     const trustStrip = document.querySelector('.trust-strip');
     const showcaseSectionEl = document.querySelector('.showcase-section');
+    const featureFocusSectionEl = document.querySelector('.feature-focus-section');
     const metricsSectionLabelEl = document.querySelector('.metrics-section');
     const heroBadgesContainer = document.querySelector('.hero-badges');
     const brandImage = document.querySelector('.brand img');
@@ -63,8 +64,8 @@
     const translations = {
         es: {
             htmlLang: 'es',
-            title: 'Oktanet | Automatización y Auditoría de Redes',
-            metaDescription: 'Oktanet ayuda a equipos de TI a automatizar, auditar y mantener redes empresariales con dashboards detallados y operación centralizada.',
+            title: 'Oktavia | Compliance, Discovery y Configs Intended',
+            metaDescription: 'Oktavia unifica discovery, compliance y generación de configs intended con jobs asíncronos, artifacts versionables y operación auditable para redes empresariales.',
             brandAria: 'Ir al inicio',
             navAria: 'Principal',
             navToggleOpen: 'Abrir menú',
@@ -80,106 +81,120 @@
             },
             trustAria: 'Tecnologías compatibles',
             showcaseAria: 'Paneles de ejemplo',
+            featureFocusAria: 'Capacidades destacadas',
             metricsAria: 'Impacto operativo',
             metricsEyebrow: 'Impacto medible',
-            metricsTitle: 'Resultados operativos que se reflejan desde las primeras iteraciones.',
-            metricsIntro: 'Métricas observadas en proyectos de automatización, auditoría y control continuo multi-vendor.',
-            heroEyebrow: 'Operación de red para equipos modernos',
-            heroTitle: 'Automatiza, audita y optimiza toda tu infraestructura desde un solo panel.',
-            heroBody: 'Oktanet centraliza visibilidad de inventario, cumplimiento de configuración, cambios de software y topología para que tu equipo pase de operar en modo reactivo a trabajar con control continuo.',
+            metricsTitle: 'Resultados operativos desde las primeras iteraciones de adopción.',
+            metricsIntro: 'Métricas de referencia en equipos que migran de procesos manuales a flujos controlados con artifacts.',
+            heroEyebrow: 'Network automation segura y auditable',
+            heroTitle: 'Estandariza discovery, compliance y configs intended desde una sola plataforma.',
+            heroBody: 'Oktavia combina un Automation Engine (FastAPI) y una UI web simple (Django + SQLite por default) para ejecutar flujos de red con control, trazabilidad y evidencia exportable.',
             heroActions: ['Solicitar una Demo', 'Conocer Oktavia'],
             heroBadgesAria: 'Puntos clave de la plataforma',
             heroBadges: ['Multi-vendor listo', 'Auditoría continua', 'Automatización guiada'],
             heroPoints: [
-                'Dashboards de auditoría por sitio, equipo y fabricante.',
-                'Cumplimiento técnico y operativo con evidencia exportable.',
-                'Flujos de mantenimiento y cambios con menos intervención manual.'
+                'Modelo por jobs asíncronos con artifacts versionables (JSON/CSV/CFG).',
+                'Sin cambios directos en red: primero se generan artifacts intended.',
+                'Remediación controlada con validación y aprobación previa.'
             ],
-            trustLabel: 'Compatible con infraestructura multi-vendor:',
+            trustLabel: 'Base actual Cisco IOS/IOS-XE, extensible a Fortinet, Juniper y Ubiquiti:',
             platformEyebrow: 'Producto principal',
-            platformTitle: 'Oktavia: visibilidad técnica profunda para redes empresariales.',
-            platformBody: 'Oktavia es la plataforma de automatización de Oktanet para equipos de networking que necesitan operar con precisión. Integra auditorías periódicas, validación de estándares, descubrimiento de topología y monitoreo de cambios en una sola consola.',
+            platformTitle: 'Oktavia: Automation Engine + UI para operar redes con control continuo.',
+            platformBody: 'Diseñada para despliegues simples y demos, con arquitectura preparada para backend externo, Oktavia integra discovery multivendor, compliance por sitio/dispositivo y config generation intended en una sola consola.',
             platformChips: [
-                'Auditoría de red',
-                'Cumplimiento de configuración',
-                'Control de versiones',
-                'Descubrimiento L2/L3',
-                'Reportes ejecutivos',
-                'Inventario inteligente'
+                'Jobs asíncronos',
+                'Artifacts versionables',
+                'Discovery NAPALM + pyATS',
+                'Compliance Rules editables',
+                'Config Generator con Jinja',
+                'API REST con API key'
             ],
-            servicesEyebrow: 'Qué resolvemos',
-            servicesTitle: 'Servicios para configurar, mantener y evolucionar tu red.',
+            servicesEyebrow: 'Capacidades de la plataforma',
+            servicesTitle: 'Módulos diseñados para discovery, compliance y operación trazable.',
             serviceTitles: [
-                'Observabilidad de red',
-                'Compliance técnico',
-                'Automatización operativa',
-                'Inventario técnico continuo',
-                'Topología y trazabilidad',
-                'Soporte especializado'
+                'Discovery multivendor',
+                'Compliance Tests + Rules',
+                'Config Generator intended',
+                'Telemetría e inventario',
+                'Topology + Digital Twin',
+                'Scheduler y API de jobs'
             ],
             serviceBodies: [
-                'Unifica inventario, estado operativo y dependencia entre nodos para decisiones rápidas ante incidentes y cambios.',
-                'Detecta configuraciones fuera de estándar, diferencias entre sedes y desviaciones frente a plantillas aprobadas.',
-                'Ejecuta tareas repetitivas de forma controlada para reducir errores humanos en respaldos, cambios y validaciones.',
-                'Consolida firmware, módulos, interfaces y estado por dispositivo para planificación de ciclos y capacidad.',
-                'Relaciona cambios de configuración con impacto en rutas y servicios críticos para análisis de causa raíz.',
-                'Acompañamiento de ingeniería en español para despliegues, operación continua y estrategias de madurez de red.'
+                'Recolecta y normaliza datos de red para una base operativa consistente por sitio, role y dispositivo.',
+                'Evalúa cumplimiento por sitio/dispositivo con reglas editables y evidencia exportable para auditoría.',
+                'Genera configuraciones desde templates Jinja y service vars sin aplicar cambios directos no controlados.',
+                'Combina inventario técnico, métricas operativas e historial para análisis de tendencias y operación diaria.',
+                'Visualiza red física/control-plane y compara snapshots para detectar drift y cambios propuestos.',
+                'Programa runs, descarga artifacts por job y automatiza flujos vía API extensible con endpoints de soporte.'
             ],
-            showcaseTitle: 'Paneles que convierten datos en acciones.',
-            showcaseIntro: 'Visualiza cumplimiento, inventario y topología con contexto técnico para acelerar análisis y priorización.',
+            showcaseTitle: 'UI pensada para operar flujos complejos con una experiencia simple.',
+            showcaseIntro: 'Desde compliance y config generation hasta topología, routing e inteligencia IP, cada módulo produce resultados accionables.',
             showcaseCaptions: [
-                'Gobierno de configuración por dominio, sitio y criticidad.',
-                'Inventario consolidado de hardware y software en tiempo real.',
-                'Topología dinámica para identificar riesgos y puntos de falla.'
+                'Cumplimiento por dominio, sitio y criticidad con rules y tests editables.',
+                'Inventario técnico consolidado con trazabilidad de software, hardware y metadatos.',
+                'Topología física/control-plane y vistas de routing (BGP/OSPF) para análisis de impacto.'
             ],
-            methodEyebrow: 'Cómo trabajamos',
-            methodTitle: 'Metodología de implementación enfocada en resultados operativos.',
-            methodTitles: ['Diagnóstico', 'Diseño', 'Despliegue', 'Optimización'],
+            featureFocusEyebrow: 'Capacidades destacadas',
+            featureFocusTitle: 'Telemetry, Digital Twin y Config Generator como núcleo operativo.',
+            featureFocusIntro: 'Estos tres módulos aceleran diagnóstico, reducen riesgo de cambio y mejoran trazabilidad en cada ejecución.',
+            featureFocusTitles: [
+                'Telemetría operativa',
+                'Digital Twin y drift',
+                'Config Generator intended'
+            ],
+            featureFocusBodies: [
+                'Centraliza métricas, tendencias e historial para detectar anomalías y priorizar acciones de forma proactiva.',
+                'Compara snapshots por dispositivo para identificar desviaciones, validar impacto y proponer cambios con evidencia.',
+                'Produce configuraciones desde templates Jinja y service vars, manteniendo control antes de cualquier remediación.'
+            ],
+            methodEyebrow: 'Modelo de ejecución',
+            methodTitle: 'Operación basada en jobs asíncronos, artifacts y aprobación.',
+            methodTitles: ['Discovery', 'Compliance', 'Intended Configs', 'Validación y aprobación'],
             methodBodies: [
-                'Evaluamos arquitectura, prácticas de operación y puntos de fricción para definir alcance técnico realista.',
-                'Construimos políticas, plantillas y tableros alineados con estándares internos y objetivos del negocio.',
-                'Integración gradual en entornos productivos, priorizando equipos críticos y minimizando riesgo operacional.',
-                'Iteramos automatizaciones, reportes y controles con métricas periódicas de mejora continua.'
+                'Recolectamos y normalizamos estado de red por site/device para construir una línea base confiable.',
+                'Ejecutamos tests contra reglas editables para identificar desvíos y priorizar remediación controlada.',
+                'Generamos artifacts versionables (JSON/CSV/CFG) antes de cualquier cambio en infraestructura.',
+                'Aplicamos cambios solo con control operativo, trazabilidad completa y seguimiento de drift.'
             ],
             casesEyebrow: 'Casos de uso',
-            casesTitle: 'Aplicaciones comunes por tipo de organización.',
-            caseTitles: ['Corporativos multi-sede', 'Operadores y carriers', 'Sectores regulados'],
+            casesTitle: 'Aplicaciones reales en operación de redes empresariales.',
+            caseTitles: ['Auditorías de compliance', 'Configs intended', 'Dashboards técnicos'],
             caseBodies: [
-                'Estandariza configuración y cumplimiento en decenas de oficinas con visibilidad centralizada por región.',
-                'Reduce tiempos de diagnóstico con topología detallada y correlación de cambios en equipos de borde y core.',
-                'Genera evidencia de auditoría técnica para cumplimiento interno y revisiones de seguridad externa.'
+                'Evalúa cumplimiento por sitio o dispositivo sin procesos manuales y con evidencia exportable.',
+                'Genera configuraciones desde templates y service vars para reducir riesgo operativo en cambios.',
+                'Visualiza inventario, topología, routing y tendencias para acelerar diagnóstico y priorización.'
             ],
             metricsBodies: [
-                'menos tiempo invertido en revisiones manuales de configuración.',
-                'más visibilidad sobre cambios y desvíos críticos en la red.',
-                'reducción de tareas repetitivas mediante automatización guiada.',
-                'capacidad de auditoría continua para operaciones de alta disponibilidad.'
+                'menos tiempo en revisiones manuales de compliance y configuración.',
+                'más visibilidad sobre desvíos y drift por sitio, rol y dispositivo.',
+                'menos tareas repetitivas con jobs programados y artifacts descargables.',
+                'capacidad de operación trazable 24/7 con validación y aprobación previa.'
             ],
-            aboutEyebrow: 'Quiénes somos',
-            aboutTitle: 'Ingeniería de redes y software para operar infraestructura con control continuo.',
+            aboutEyebrow: 'Arquitectura y enfoque',
+            aboutTitle: 'Automation segura, auditable y extensible para entornos multi-vendor.',
             aboutParagraphs: [
-                'Oktanet nace para simplificar la gestión de redes heterogéneas a través de una consola inteligente que unifica automatización, visualización y control operativo. En un entorno donde las infraestructuras empresariales crecen en complejidad, con múltiples fabricantes, arquitecturas híbridas y operaciones cada vez más críticas para el negocio, los equipos de tecnología necesitan nuevas formas de operar sus redes con mayor velocidad, visibilidad y confiabilidad.',
-                'Somos un equipo de ingenieros especializados en redes, automatización y desarrollo de software, enfocados en resolver los desafíos reales que enfrentan las organizaciones modernas. En Oktanet desarrollamos tecnología que transforma la forma en que las empresas operan su infraestructura, pasando de procesos manuales y fragmentados a operaciones inteligentes basadas en automatización, telemetría y flujos de trabajo programables.'
+                'Oktavia no busca reemplazar un NMS de monitoreo en tiempo real. Su foco es estandarizar discovery, compliance y generación de intended configs con un modelo de ejecución controlado y trazable.',
+                'La arquitectura separa UI y Automation Engine para facilitar despliegues simples (SQLite por default) y evolución a backends externos sin perder compatibilidad de API ni trazabilidad de artifacts.'
             ],
             aboutCardTitles: [
-                'Consola inteligente unificada',
-                'Ingeniería orientada a resultados',
-                'Operación programable basada en datos'
+                'Extensibilidad por vendor',
+                'Scope y no-objetivos claros',
+                'Licenciamiento Core / Pro'
             ],
             aboutCardBodies: [
-                'Integramos automatización, visualización y control operativo en una sola experiencia SaaS para redes multi-vendor.',
-                'Combinamos experiencia en networking, automatización y software para resolver problemas técnicos de alto impacto.',
-                'Pasamos de tareas manuales a flujos inteligentes con telemetría continua y decisiones operativas más confiables.'
+                'Cada fabricante se integra con adapter de discovery, normalizador, reglas de compliance y templates Jinja.',
+                'Prioriza remediación supervisada con aprobación, evitando automatizaciones opacas y no auditables.',
+                'Core cubre compliance e inventario; Pro agrega observabilidad avanzada, scheduler y Digital Twin.'
             ],
             contactEyebrow: 'Conversemos',
-            contactTitle: 'Diseña una operación de red más predecible con Oktanet.',
-            contactBody: 'Cuéntanos tu contexto técnico y objetivos. Nuestro equipo prepara una sesión de descubrimiento para definir alcance, tiempos y arquitectura recomendada.',
-            contactBullets: ['Enfoque multi-vendor', 'Atención en español'],
+            contactTitle: 'Evalúa Oktavia en un entorno controlado y orientado a resultados.',
+            contactBody: 'Comparte tu contexto técnico para diseñar un quickstart de discovery, compliance y config generation en tu entorno actual.',
+            contactBullets: ['API REST con autenticación por X-API-Key', 'Despliegue simple con opción de backend externo'],
             officeTitle: 'Oficina principal',
-            officeLines: ['Torre de Oficinas, Downtown Reforma', 'Ciudad de México', 'contacto@oktanet.com'],
+            officeLines: ['Torre de Oficinas, Downtown Reforma', 'Ciudad de México'],
             formLabels: ['Nombre completo', 'Correo electrónico', 'Empresa', '¿Qué deseas resolver?'],
             submitButton: 'Enviar solicitud',
-            footerTagline: 'Automatización y auditoría de redes empresariales.',
+            footerTagline: 'Oktavia: automation, compliance y discovery para redes empresariales.',
             copyright: 'Todos los derechos reservados.',
             heroImageAlt: 'Dashboard principal de monitoreo y auditoría de red',
             platformImageAlt: 'Vista de cumplimiento de configuración en Oktavia',
@@ -200,8 +215,8 @@
         },
         en: {
             htmlLang: 'en',
-            title: 'Oktanet | Network Automation and Auditing',
-            metaDescription: 'Oktanet helps IT teams automate, audit, and maintain enterprise networks with detailed dashboards and centralized operations.',
+            title: 'Oktavia | Compliance, Discovery and Intended Configs',
+            metaDescription: 'Oktavia unifies discovery, compliance, and intended config generation with async jobs, versioned artifacts, and auditable operations for enterprise networks.',
             brandAria: 'Back to top',
             navAria: 'Main',
             navToggleOpen: 'Open menu',
@@ -217,106 +232,120 @@
             },
             trustAria: 'Compatible technologies',
             showcaseAria: 'Sample dashboards',
+            featureFocusAria: 'Highlighted capabilities',
             metricsAria: 'Operational impact',
             metricsEyebrow: 'Measurable impact',
-            metricsTitle: 'Operational outcomes visible from the first implementation cycles.',
-            metricsIntro: 'Metrics observed across multi-vendor automation, auditing, and continuous-control projects.',
-            heroEyebrow: 'Network operations for modern teams',
-            heroTitle: 'Automate, audit, and optimize your entire infrastructure from one dashboard.',
-            heroBody: 'Oktanet centralizes inventory visibility, configuration compliance, software changes, and topology so your team can move from reactive operations to continuous control.',
+            metricsTitle: 'Operational outcomes from the first adoption cycles.',
+            metricsIntro: 'Reference metrics from teams moving from manual processes to controlled artifact-based workflows.',
+            heroEyebrow: 'Secure and auditable network automation',
+            heroTitle: 'Standardize discovery, compliance, and intended configs from one platform.',
+            heroBody: 'Oktavia combines an Automation Engine (FastAPI) and a simple web UI (Django + SQLite by default) to run network workflows with control, traceability, and exportable evidence.',
             heroActions: ['Request a Demo', 'Explore Oktavia'],
             heroBadgesAria: 'Platform highlights',
             heroBadges: ['Multi-vendor ready', 'Continuous auditing', 'Guided automation'],
             heroPoints: [
-                'Audit dashboards by site, device, and vendor.',
-                'Technical and operational compliance with exportable evidence.',
-                'Maintenance and change workflows with less manual effort.'
+                'Async job model with versioned artifacts (JSON/CSV/CFG).',
+                'No direct network changes: intended artifacts are generated first.',
+                'Controlled remediation with validation and approval gates.'
             ],
-            trustLabel: 'Compatible with multi-vendor infrastructure:',
+            trustLabel: 'Current base: Cisco IOS/IOS-XE, extensible to Fortinet, Juniper, and Ubiquiti:',
             platformEyebrow: 'Core Product',
-            platformTitle: 'Oktavia: deep technical visibility for enterprise networks.',
-            platformBody: 'Oktavia is Oktanet\'s automation platform for networking teams that need precision operations. It integrates periodic audits, standards validation, topology discovery, and change monitoring in a single console.',
+            platformTitle: 'Oktavia: Automation Engine + UI for continuous-control network operations.',
+            platformBody: 'Built for simple deployments and demos, with architecture ready for external backends, Oktavia unifies multi-vendor discovery, per-site/device compliance, and intended config generation in one console.',
             platformChips: [
-                'Network auditing',
-                'Configuration compliance',
-                'Version control',
-                'L2/L3 discovery',
-                'Executive reports',
-                'Smart inventory'
+                'Async jobs',
+                'Versioned artifacts',
+                'NAPALM + pyATS discovery',
+                'Editable compliance rules',
+                'Jinja config generator',
+                'REST API with API key'
             ],
-            servicesEyebrow: 'What we solve',
-            servicesTitle: 'Services to configure, maintain, and evolve your network.',
+            servicesEyebrow: 'Platform capabilities',
+            servicesTitle: 'Modules built for discovery, compliance, and traceable operations.',
             serviceTitles: [
-                'Network observability',
-                'Technical compliance',
-                'Operational automation',
-                'Continuous technical inventory',
-                'Topology and traceability',
-                'Specialized support'
+                'Multi-vendor discovery',
+                'Compliance Tests + Rules',
+                'Intended Config Generator',
+                'Telemetry and inventory',
+                'Topology + Digital Twin',
+                'Scheduler and jobs API'
             ],
             serviceBodies: [
-                'Unify inventory, operational status, and node dependencies for faster decisions during incidents and changes.',
-                'Detect out-of-standard configurations, differences across sites, and deviations from approved templates.',
-                'Run repetitive tasks in a controlled way to reduce human errors in backups, changes, and validations.',
-                'Consolidate firmware, modules, interfaces, and per-device status for lifecycle and capacity planning.',
-                'Correlate configuration changes with route and critical service impact for root-cause analysis.',
-                'Engineering support in Spanish for deployments, continuous operations, and network maturity strategies.'
+                'Collect and normalize network data into a consistent operational baseline by site, role, and device.',
+                'Evaluate compliance per site/device with editable rules and exportable audit evidence.',
+                'Generate configurations from Jinja templates and service vars without uncontrolled direct changes.',
+                'Combine technical inventory, operational metrics, and history for trend analysis and daily operations.',
+                'Visualize physical/control-plane topology and compare snapshots to detect drift and proposed changes.',
+                'Schedule runs, download per-job artifacts, and automate workflows through an extensible API.'
             ],
-            showcaseTitle: 'Dashboards that turn data into action.',
-            showcaseIntro: 'Visualize compliance, inventory, and topology with technical context to accelerate analysis and prioritization.',
+            showcaseTitle: 'A UI designed for complex workflows with simple operation.',
+            showcaseIntro: 'From compliance and config generation to topology, routing, and IP intelligence, each module produces actionable output.',
             showcaseCaptions: [
-                'Configuration governance by domain, site, and criticality.',
-                'Consolidated hardware and software inventory in real time.',
-                'Dynamic topology to identify risks and failure points.'
+                'Compliance by domain, site, and criticality with editable rules and tests.',
+                'Consolidated technical inventory with software, hardware, and metadata traceability.',
+                'Physical/control-plane topology and routing views (BGP/OSPF) for impact analysis.'
             ],
-            methodEyebrow: 'How we work',
-            methodTitle: 'Implementation methodology focused on operational outcomes.',
-            methodTitles: ['Assessment', 'Design', 'Deployment', 'Optimization'],
+            featureFocusEyebrow: 'Highlighted capabilities',
+            featureFocusTitle: 'Telemetry, Digital Twin, and Config Generator as core modules.',
+            featureFocusIntro: 'These three modules accelerate diagnosis, reduce change risk, and improve traceability in every run.',
+            featureFocusTitles: [
+                'Operational telemetry',
+                'Digital Twin and drift',
+                'Intended Config Generator'
+            ],
+            featureFocusBodies: [
+                'Centralizes metrics, trends, and history to detect anomalies and prioritize actions proactively.',
+                'Compares per-device snapshots to identify deviations, validate impact, and propose evidence-based changes.',
+                'Produces configurations from Jinja templates and service vars, preserving control before any remediation.'
+            ],
+            methodEyebrow: 'Execution model',
+            methodTitle: 'Operations based on async jobs, artifacts, and approvals.',
+            methodTitles: ['Discovery', 'Compliance', 'Intended Configs', 'Validation and approval'],
             methodBodies: [
-                'We evaluate architecture, operating practices, and friction points to define a realistic technical scope.',
-                'We build policies, templates, and dashboards aligned with internal standards and business goals.',
-                'Gradual integration in production environments, prioritizing critical devices and minimizing operational risk.',
-                'We iterate automations, reports, and controls with periodic continuous-improvement metrics.'
+                'Collect and normalize network state by site/device to build a reliable operational baseline.',
+                'Run tests against editable rules to identify deviations and prioritize controlled remediation.',
+                'Generate versioned artifacts (JSON/CSV/CFG) before any infrastructure change.',
+                'Apply changes only with operational control, full traceability, and drift follow-up.'
             ],
             casesEyebrow: 'Use Cases',
-            casesTitle: 'Common applications by organization type.',
-            caseTitles: ['Multi-site enterprises', 'Operators and carriers', 'Regulated sectors'],
+            casesTitle: 'Real applications for enterprise network operations.',
+            caseTitles: ['Compliance audits', 'Intended configs', 'Technical dashboards'],
             caseBodies: [
-                'Standardize configuration and compliance across dozens of offices with centralized regional visibility.',
-                'Reduce diagnosis time with detailed topology and change correlation in edge and core devices.',
-                'Generate technical audit evidence for internal compliance and external security reviews.'
+                'Evaluate compliance by site or device without manual processes and with exportable evidence.',
+                'Generate configs from templates and service vars to reduce operational change risk.',
+                'Visualize inventory, topology, routing, and trends to accelerate diagnosis and prioritization.'
             ],
             metricsBodies: [
-                'less time spent on manual configuration reviews.',
-                'more visibility into network changes and critical deviations.',
-                'reduction of repetitive tasks through guided automation.',
-                'continuous auditing capability for high-availability operations.'
+                'less time spent on manual compliance and configuration reviews.',
+                'more visibility into deviations and drift by site, role, and device.',
+                'fewer repetitive tasks with scheduled jobs and downloadable artifacts.',
+                '24/7 traceable operations with validation and approval gates.'
             ],
-            aboutEyebrow: 'About us',
-            aboutTitle: 'Network and software engineering to run infrastructure with continuous control.',
+            aboutEyebrow: 'Architecture and approach',
+            aboutTitle: 'Secure, auditable, and extensible automation for multi-vendor environments.',
             aboutParagraphs: [
-                'Oktanet was created to simplify heterogeneous network management through an intelligent console that unifies automation, visualization, and operational control. In an environment where enterprise infrastructures grow in complexity, with multiple vendors, hybrid architectures, and operations increasingly critical to the business, technology teams need new ways to run their networks with greater speed, visibility, and reliability.',
-                'We are a team of engineers specialized in networking, automation, and software development, focused on solving the real challenges faced by modern organizations. At Oktanet, we build technology that transforms how companies operate their infrastructure, moving from manual and fragmented processes to intelligent operations based on automation, telemetry, and programmable workflows.'
+                'Oktavia is not meant to replace real-time monitoring NMS platforms. Its focus is to standardize discovery, compliance, and intended config generation through a controlled and traceable execution model.',
+                'The architecture separates UI and Automation Engine to support simple deployments (SQLite by default) and evolution to external backends without losing API compatibility or artifact traceability.'
             ],
             aboutCardTitles: [
-                'Unified intelligent console',
-                'Results-driven engineering',
-                'Data-driven programmable operations'
+                'Vendor extensibility',
+                'Clear scope and non-goals',
+                'Core / Pro licensing'
             ],
             aboutCardBodies: [
-                'We combine automation, visualization, and operational control in a single SaaS experience for multi-vendor networks.',
-                'We bring together networking, automation, and software expertise to solve high-impact technical problems.',
-                'We replace manual tasks with intelligent flows powered by continuous telemetry and more reliable operational decisions.'
+                'Each vendor is integrated through a discovery adapter, normalizer, compliance rule set, and Jinja templates.',
+                'It prioritizes supervised remediation with approvals, avoiding opaque and non-auditable automation.',
+                'Core covers compliance and inventory; Pro adds advanced observability, scheduler, and Digital Twin.'
             ],
             contactEyebrow: 'Let\'s talk',
-            contactTitle: 'Build more predictable network operations with Oktanet.',
-            contactBody: 'Tell us your technical context and goals. Our team will prepare a discovery session to define scope, timeline, and recommended architecture.',
-            contactBullets: ['Multi-vendor approach', 'Spanish-speaking support'],
+            contactTitle: 'Evaluate Oktavia in a controlled, outcome-driven setup.',
+            contactBody: 'Share your technical context to design a quickstart for discovery, compliance, and config generation in your current environment.',
+            contactBullets: ['REST API with X-API-Key authentication', 'Simple deployment with external-backend option'],
             officeTitle: 'Head Office',
-            officeLines: ['Office Tower, Downtown Reforma', 'Mexico City', 'contacto@oktanet.com'],
+            officeLines: ['Office Tower, Downtown Reforma', 'Mexico City'],
             formLabels: ['Full name', 'Email', 'Company', 'What do you need to solve?'],
             submitButton: 'Send Request',
-            footerTagline: 'Automation and auditing for enterprise networks.',
+            footerTagline: 'Oktavia: automation, compliance, and discovery for enterprise networks.',
             copyright: 'All rights reserved.',
             heroImageAlt: 'Main dashboard for network monitoring and auditing',
             platformImageAlt: 'Configuration compliance view in Oktavia',
@@ -392,6 +421,10 @@
             showcaseSectionEl.setAttribute('aria-label', copy.showcaseAria);
         }
 
+        if (featureFocusSectionEl) {
+            featureFocusSectionEl.setAttribute('aria-label', copy.featureFocusAria);
+        }
+
         if (metricsSectionLabelEl) {
             metricsSectionLabelEl.setAttribute('aria-label', copy.metricsAria);
         }
@@ -430,6 +463,12 @@
         setText(document.querySelector('.showcase-section h2'), copy.showcaseTitle);
         setText(document.querySelector('.showcase-section .section-intro'), copy.showcaseIntro);
         setTextList(document.querySelectorAll('.showcase-grid figcaption'), copy.showcaseCaptions);
+
+        setText(document.querySelector('.feature-focus-section .eyebrow'), copy.featureFocusEyebrow);
+        setText(document.querySelector('.feature-focus-section h2'), copy.featureFocusTitle);
+        setText(document.querySelector('.feature-focus-section .section-intro'), copy.featureFocusIntro);
+        setTextList(document.querySelectorAll('.feature-focus-card h3'), copy.featureFocusTitles);
+        setTextList(document.querySelectorAll('.feature-focus-card p'), copy.featureFocusBodies);
 
         setText(document.querySelector('.method-section .eyebrow'), copy.methodEyebrow);
         setText(document.querySelector('.method-section h2'), copy.methodTitle);
@@ -617,6 +656,7 @@
     const revealTargets = document.querySelectorAll(
         '.hero-copy, .hero-visual, .platform-copy, .platform-visual, .about-copy, ' +
         '.services-section .service-card, .showcase-section .showcase-grid figure, ' +
+        '.feature-focus-section .feature-focus-card, ' +
         '.cases-section .cases-grid article, .metrics-copy, .metrics-section .metrics-grid article, .contact-copy, .contact-form, .footer-brand, .footer-links'
     );
 

@@ -649,6 +649,7 @@ p {
 .platform-section,
 .services-section,
 .showcase-section,
+.feature-focus-section,
 .method-section,
 .cases-section,
 .about-section,
@@ -666,6 +667,7 @@ p {
 .platform-copy h2,
 .services-section h2,
 .showcase-section h2,
+.feature-focus-section h2,
 .method-section h2,
 .cases-section h2,
 .about-section h2,
@@ -836,6 +838,90 @@ p {
     min-height: 70px;
     font-weight: bold;
     text-align: center;
+}
+
+.feature-focus-section {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background: #f5f9ff;
+    border-top: 1px solid #ccdced;
+    border-bottom: 1px solid #ccdced;
+}
+
+.feature-focus-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-image:
+        linear-gradient(90deg, rgba(148, 188, 222, 0.15) 0 1px, transparent 1px),
+        linear-gradient(rgba(148, 188, 222, 0.14) 0 1px, transparent 1px),
+        radial-gradient(circle at 35% 30%, rgba(135, 192, 232, 0.24) 0%, rgba(135, 192, 232, 0) 42%),
+        radial-gradient(circle at 68% 78%, rgba(135, 192, 232, 0.16) 0%, rgba(135, 192, 232, 0) 38%);
+    background-size: 92px 92px, 92px 92px, 100% 100%, 100% 100%;
+    background-position: 0 0, 0 0, center, center;
+    opacity: 0.9;
+}
+
+.feature-focus-section::after {
+    content: "";
+    position: absolute;
+    width: 620px;
+    height: 620px;
+    top: -218px;
+    left: calc(100% - 320px);
+    z-index: 0;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230c355a80'%3E%3Cpath d='M19.43 12.98c.04-.32.07-.65.07-.98s-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.39-1.08-.73-1.69-.98l-.38-2.65A.488.488 0 0 0 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.08.65-.08.98s.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.39 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.13-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z'/%3E%3C/svg%3E");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    transform-origin: 50% 50%;
+    animation: feature-gear-spin 28s linear infinite;
+    will-change: transform;
+    opacity: 0.96;
+}
+
+.feature-focus-section > .container {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes feature-gear-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.feature-focus-grid {
+    margin-top: 26px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(220px, 1fr));
+    gap: 16px;
+}
+
+.feature-focus-card {
+    background: #ffffff;
+    border: 1px solid #c8d9ec;
+    border-radius: 14px;
+    padding: 22px 18px;
+    box-shadow: var(--shadow-soft);
+}
+
+.feature-focus-card h3 {
+    margin-bottom: 10px;
+    font-size: 1.14rem;
+}
+
+.feature-focus-card p {
+    margin: 0;
+    color: #43607f;
+    font-size: 0.98rem;
 }
 
 .method-section {
@@ -1017,13 +1103,7 @@ p {
 }
 
 .metric-card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, #0d6da7 0%, #41b6ea 100%);
+    content: none;
 }
 
 .metric-head {
@@ -1362,6 +1442,10 @@ p {
         border-right-color: transparent;
     }
 
+    .feature-focus-section::after {
+        animation: none;
+    }
+
 }
 
 @media (max-width: 1100px) {
@@ -1405,6 +1489,7 @@ p {
 
     .services-grid,
     .showcase-grid,
+    .feature-focus-grid,
     .cases-grid,
     .method-grid,
     .metrics-grid {
@@ -1422,6 +1507,13 @@ p {
 
     .footer-links {
         grid-template-columns: repeat(3, auto);
+    }
+
+    .feature-focus-section::after {
+        width: 520px;
+        height: 520px;
+        top: -182px;
+        left: calc(100% - 280px);
     }
 }
 
@@ -1509,6 +1601,7 @@ p {
     .platform-section,
     .services-section,
     .showcase-section,
+    .feature-focus-section,
     .method-section,
     .cases-section,
     .about-section,
@@ -1539,6 +1632,7 @@ p {
 
     .services-grid,
     .showcase-grid,
+    .feature-focus-grid,
     .cases-grid,
     .method-grid,
     .metrics-grid {
@@ -1574,5 +1668,18 @@ p {
 
     .footer-links {
         grid-template-columns: repeat(2, auto);
+    }
+
+    .feature-focus-section::before {
+        opacity: 0.76;
+        background-size: 72px 72px, 72px 72px, 100% 100%, 100% 100%;
+    }
+
+    .feature-focus-section::after {
+        width: 368px;
+        height: 368px;
+        top: -122px;
+        left: calc(100% - 228px);
+        opacity: 0.84;
     }
 }
