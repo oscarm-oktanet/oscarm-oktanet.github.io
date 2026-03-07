@@ -6,6 +6,7 @@
     const mainNav = document.querySelector('.main-nav');
     const navLinks = document.querySelectorAll('.main-nav a');
     const navCta = document.querySelector('.nav-cta');
+    const contactForm = document.querySelector('.contact-form');
     const languageDropdown = document.querySelector('.language-dropdown');
     const langToggle = document.querySelector('.lang-toggle');
     const langMenu = document.getElementById('lang-menu');
@@ -30,6 +31,7 @@
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const globalAnimationDelayMs = 140;
     const storageKey = 'oktanet-language';
+    const formSubmittedStorageKey = 'oktanet-contact-form-submitted';
 
     const setText = function (element, text) {
         if (element && typeof text === 'string') {
@@ -64,14 +66,14 @@
     const translations = {
         es: {
             htmlLang: 'es',
-            title: 'Oktavia | Compliance, Discovery y Configs Intended',
-            metaDescription: 'Oktavia unifica discovery, compliance y generación de configs intended con jobs asíncronos, artifacts versionables y operación auditable para redes empresariales.',
+            title: 'Oktavia | Cumplimiento, Descubrimiento y Configuraciones Objetivo',
+            metaDescription: 'Oktavia unifica descubrimiento, cumplimiento y generación de configuraciones objetivo con tareas asíncronas, artefactos versionables y operación auditable para redes empresariales.',
             brandAria: 'Ir al inicio',
             navAria: 'Principal',
             navToggleOpen: 'Abrir menú',
             navToggleClose: 'Cerrar menú',
             navLinks: ['Plataforma', 'Servicios', 'Metodología', 'Casos de uso', 'Quiénes somos', 'Contacto'],
-            navCta: 'Solicitar Demo',
+            navCta: 'Solicitar demostración',
             langToggleAria: 'Cambiar idioma',
             langCode: 'ES',
             brandLogoAlt: 'Logo de Oktanet',
@@ -85,118 +87,116 @@
             metricsAria: 'Impacto operativo',
             metricsEyebrow: 'Impacto medible',
             metricsTitle: 'Resultados operativos desde las primeras iteraciones de adopción.',
-            metricsIntro: 'Métricas de referencia en equipos que migran de procesos manuales a flujos controlados con artifacts.',
-            heroEyebrow: 'Network automation segura y auditable',
-            heroTitle: 'Estandariza discovery, compliance y configs intended desde una sola plataforma.',
-            heroBody: 'Oktavia combina un Automation Engine (FastAPI) y una UI web simple (Django + SQLite por default) para ejecutar flujos de red con control, trazabilidad y evidencia exportable.',
-            heroActions: ['Solicitar una Demo', 'Conocer Oktavia'],
+            metricsIntro: 'Métricas de referencia en equipos que migran de procesos manuales a flujos controlados con artefactos.',
+            heroEyebrow: 'Automatización de redes segura y auditable',
+            heroTitle: 'Estandariza descubrimiento, cumplimiento y configuraciones objetivo desde una sola plataforma.',
+            heroBody: 'Oktavia combina un motor de automatización y una interfaz web simple para ejecutar flujos de red con control, trazabilidad y evidencia exportable.',
+            heroActions: ['Solicitar una demostración', 'Conocer Oktavia'],
             heroBadgesAria: 'Puntos clave de la plataforma',
-            heroBadges: ['Multi-vendor listo', 'Auditoría continua', 'Automatización guiada'],
+            heroBadges: ['Listo para múltiples fabricantes', 'Auditoría continua', 'Automatización guiada'],
             heroPoints: [
-                'Modelo por jobs asíncronos con artifacts versionables (JSON/CSV/CFG).',
-                'Sin cambios directos en red: primero se generan artifacts intended.',
+                'Modelo con tareas asíncronas y artefactos versionables (JSON/CSV/CFG).',
+                'Sin cambios directos en la red: primero se generan configuraciones objetivo.',
                 'Remediación controlada con validación y aprobación previa.'
             ],
-            trustLabel: 'Base actual Cisco IOS/IOS-XE, extensible a Fortinet, Juniper y Ubiquiti:',
+            trustLabel: 'Compatible con infraestructura multifabricante:',
             platformEyebrow: 'Producto principal',
-            platformTitle: 'Oktavia: Automation Engine + UI para operar redes con control continuo.',
-            platformBody: 'Diseñada para despliegues simples y demos, con arquitectura preparada para backend externo, Oktavia integra discovery multivendor, compliance por sitio/dispositivo y config generation intended en una sola consola.',
+            platformTitle: 'Oktavia: motor de automatización + interfaz web para operar redes con control continuo.',
+            platformBody: 'Diseñada para despliegues simples y demostraciones, con arquitectura preparada para servicios externos, Oktavia integra descubrimiento multifabricante, cumplimiento por sitio o dispositivo y generación de configuraciones objetivo en una sola consola.',
             platformChips: [
-                'Jobs asíncronos',
-                'Artifacts versionables',
-                'Discovery NAPALM + pyATS',
-                'Compliance Rules editables',
-                'Config Generator con Jinja',
-                'API REST con API key'
+                'Tareas asíncronas',
+                'Artefactos versionables',
+                'Reglas de cumplimiento editables',
+                'API REST con clave de API'
             ],
             servicesEyebrow: 'Capacidades de la plataforma',
-            servicesTitle: 'Módulos diseñados para discovery, compliance y operación trazable.',
+            servicesTitle: 'Módulos diseñados para descubrimiento, cumplimiento y operación trazable.',
             serviceTitles: [
-                'Discovery multivendor',
-                'Compliance Tests + Rules',
-                'Config Generator intended',
+                'Descubrimiento multifabricante',
+                'Pruebas y reglas de cumplimiento',
+                'Generador de configuraciones objetivo',
                 'Telemetría e inventario',
-                'Topology + Digital Twin',
-                'Scheduler y API de jobs'
+                'Topología y gemelo digital',
+                'Programador y API de tareas'
             ],
             serviceBodies: [
-                'Recolecta y normaliza datos de red para una base operativa consistente por sitio, role y dispositivo.',
+                'Recolecta y normaliza datos de red para una base operativa consistente por sitio, función y dispositivo.',
                 'Evalúa cumplimiento por sitio/dispositivo con reglas editables y evidencia exportable para auditoría.',
-                'Genera configuraciones desde templates Jinja y service vars sin aplicar cambios directos no controlados.',
+                'Genera configuraciones desde plantillas Jinja y variables de servicio sin aplicar cambios directos no controlados.',
                 'Combina inventario técnico, métricas operativas e historial para análisis de tendencias y operación diaria.',
-                'Visualiza red física/control-plane y compara snapshots para detectar drift y cambios propuestos.',
-                'Programa runs, descarga artifacts por job y automatiza flujos vía API extensible con endpoints de soporte.'
+                'Visualiza red física y plano de control, y compara instantáneas para detectar desvíos y cambios propuestos.',
+                'Programa ejecuciones, descarga artefactos por tarea y automatiza flujos mediante una API extensible con puntos de soporte.'
             ],
-            showcaseTitle: 'UI pensada para operar flujos complejos con una experiencia simple.',
-            showcaseIntro: 'Desde compliance y config generation hasta topología, routing e inteligencia IP, cada módulo produce resultados accionables.',
+            showcaseTitle: 'Interfaz pensada para operar flujos complejos con una experiencia simple.',
+            showcaseIntro: 'Desde cumplimiento y generación de configuraciones hasta topología, enrutamiento e inteligencia de IP, cada módulo produce resultados accionables.',
             showcaseCaptions: [
-                'Cumplimiento por dominio, sitio y criticidad con rules y tests editables.',
+                'Cumplimiento por dominio, sitio y criticidad con reglas y pruebas editables.',
                 'Inventario técnico consolidado con trazabilidad de software, hardware y metadatos.',
-                'Topología física/control-plane y vistas de routing (BGP/OSPF) para análisis de impacto.'
+                'Topología física y plano de control, con vistas de enrutamiento (BGP/OSPF) para análisis de impacto.'
             ],
             featureFocusEyebrow: 'Capacidades destacadas',
-            featureFocusTitle: 'Telemetry, Digital Twin y Config Generator como núcleo operativo.',
+            featureFocusTitle: 'Telemetría, gemelo digital y generador de configuración como núcleo operativo.',
             featureFocusIntro: 'Estos tres módulos aceleran diagnóstico, reducen riesgo de cambio y mejoran trazabilidad en cada ejecución.',
             featureFocusTitles: [
                 'Telemetría operativa',
-                'Digital Twin y drift',
-                'Config Generator intended'
+                'Gemelo digital y desvío de configuración',
+                'Generador de configuraciones objetivo'
             ],
             featureFocusBodies: [
                 'Centraliza métricas, tendencias e historial para detectar anomalías y priorizar acciones de forma proactiva.',
-                'Compara snapshots por dispositivo para identificar desviaciones, validar impacto y proponer cambios con evidencia.',
-                'Produce configuraciones desde templates Jinja y service vars, manteniendo control antes de cualquier remediación.'
+                'Compara instantáneas por dispositivo para identificar desviaciones, validar impacto y proponer cambios con evidencia.',
+                'Produce configuraciones desde plantillas Jinja y variables de servicio, manteniendo control antes de cualquier remediación.'
             ],
             methodEyebrow: 'Modelo de ejecución',
-            methodTitle: 'Operación basada en jobs asíncronos, artifacts y aprobación.',
-            methodTitles: ['Discovery', 'Compliance', 'Intended Configs', 'Validación y aprobación'],
+            methodTitle: 'Operación basada en tareas asíncronas, artefactos y aprobación.',
+            methodTitles: ['Descubrimiento', 'Cumplimiento', 'Configuraciones objetivo', 'Validación y aprobación'],
             methodBodies: [
-                'Recolectamos y normalizamos estado de red por site/device para construir una línea base confiable.',
-                'Ejecutamos tests contra reglas editables para identificar desvíos y priorizar remediación controlada.',
-                'Generamos artifacts versionables (JSON/CSV/CFG) antes de cualquier cambio en infraestructura.',
-                'Aplicamos cambios solo con control operativo, trazabilidad completa y seguimiento de drift.'
+                'Recolectamos y normalizamos el estado de la red por sitio y dispositivo para construir una línea base confiable.',
+                'Ejecutamos pruebas contra reglas editables para identificar desvíos y priorizar remediación controlada.',
+                'Generamos artefactos versionables (JSON/CSV/CFG) antes de cualquier cambio en la infraestructura.',
+                'Aplicamos cambios solo con control operativo, trazabilidad completa y seguimiento de desvíos.'
             ],
             casesEyebrow: 'Casos de uso',
             casesTitle: 'Aplicaciones reales en operación de redes empresariales.',
-            caseTitles: ['Auditorías de compliance', 'Configs intended', 'Dashboards técnicos'],
+            caseTitles: ['Auditorías de cumplimiento', 'Configuraciones objetivo', 'Tableros técnicos'],
             caseBodies: [
                 'Evalúa cumplimiento por sitio o dispositivo sin procesos manuales y con evidencia exportable.',
-                'Genera configuraciones desde templates y service vars para reducir riesgo operativo en cambios.',
-                'Visualiza inventario, topología, routing y tendencias para acelerar diagnóstico y priorización.'
+                'Genera configuraciones desde plantillas y variables de servicio para reducir riesgo operativo en cambios.',
+                'Visualiza inventario, topología, enrutamiento y tendencias para acelerar diagnóstico y priorización.'
             ],
             metricsBodies: [
-                'menos tiempo en revisiones manuales de compliance y configuración.',
-                'más visibilidad sobre desvíos y drift por sitio, rol y dispositivo.',
-                'menos tareas repetitivas con jobs programados y artifacts descargables.',
+                'menos tiempo en revisiones manuales de cumplimiento y configuración.',
+                'más visibilidad sobre desvíos de configuración por sitio, rol y dispositivo.',
+                'menos tareas repetitivas con tareas programadas y artefactos descargables.',
                 'capacidad de operación trazable 24/7 con validación y aprobación previa.'
             ],
             aboutEyebrow: 'Arquitectura y enfoque',
-            aboutTitle: 'Automation segura, auditable y extensible para entornos multi-vendor.',
+            aboutTitle: 'Automatización segura, auditable y extensible para entornos multifabricante.',
             aboutParagraphs: [
-                'Oktavia no busca reemplazar un NMS de monitoreo en tiempo real. Su foco es estandarizar discovery, compliance y generación de intended configs con un modelo de ejecución controlado y trazable.',
-                'La arquitectura separa UI y Automation Engine para facilitar despliegues simples (SQLite por default) y evolución a backends externos sin perder compatibilidad de API ni trazabilidad de artifacts.'
+                'Oktavia no busca reemplazar un NMS de monitoreo en tiempo real. Su foco es estandarizar descubrimiento, cumplimiento y generación de configuraciones objetivo con un modelo de ejecución controlado y trazable.',
+                'La arquitectura separa la interfaz web y el motor de automatización para facilitar despliegues simples y evolución a servicios externos sin perder compatibilidad de API ni trazabilidad de artefactos.'
             ],
             aboutCardTitles: [
-                'Extensibilidad por vendor',
-                'Scope y no-objetivos claros',
-                'Licenciamiento Core / Pro'
+                'Extensibilidad por fabricante',
+                'Alcance y no objetivos claros',
+                'Licenciamiento básico / avanzado'
             ],
             aboutCardBodies: [
-                'Cada fabricante se integra con adapter de discovery, normalizador, reglas de compliance y templates Jinja.',
+                'Cada fabricante se integra con adaptador de descubrimiento, normalizador, reglas de cumplimiento y plantillas Jinja.',
                 'Prioriza remediación supervisada con aprobación, evitando automatizaciones opacas y no auditables.',
-                'Core cubre compliance e inventario; Pro agrega observabilidad avanzada, scheduler y Digital Twin.'
+                'La licencia básica cubre cumplimiento e inventario; la avanzada agrega observabilidad, programación y gemelo digital.'
             ],
             contactEyebrow: 'Conversemos',
             contactTitle: 'Evalúa Oktavia en un entorno controlado y orientado a resultados.',
-            contactBody: 'Comparte tu contexto técnico para diseñar un quickstart de discovery, compliance y config generation en tu entorno actual.',
-            contactBullets: ['API REST con autenticación por X-API-Key', 'Despliegue simple con opción de backend externo'],
+            contactBody: 'Comparte tu contexto técnico para diseñar un inicio rápido de descubrimiento, cumplimiento y generación de configuraciones en tu entorno actual.',
+            contactBullets: ['API REST con autenticación', 'Despliegue simple con opción de servicio externo'],
             officeTitle: 'Oficina principal',
             officeLines: ['Torre de Oficinas, Downtown Reforma', 'Ciudad de México'],
             formLabels: ['Nombre completo', 'Correo electrónico', 'Empresa', '¿Qué deseas resolver?'],
             submitButton: 'Enviar solicitud',
-            footerTagline: 'Oktavia: automation, compliance y discovery para redes empresariales.',
+            footerTagline: 'Oktavia: automatización inteligente para redes empresariales.',
             copyright: 'Todos los derechos reservados.',
-            heroImageAlt: 'Dashboard principal de monitoreo y auditoría de red',
+            heroImageAlt: 'Tablero principal de monitoreo y auditoría de red',
             platformImageAlt: 'Vista de cumplimiento de configuración en Oktavia',
             serviceIconAlts: [
                 'Icono de visibilidad de red',
@@ -207,9 +207,9 @@
                 'Icono de soporte'
             ],
             showcaseImageAlts: [
-                'Dashboard de cumplimiento general',
-                'Dashboard de inventario',
-                'Dashboard de topología'
+                'Tablero de cumplimiento general',
+                'Tablero de inventario',
+                'Tablero de topología'
             ],
             footerLogoAlt: 'Símbolo de Oktanet'
         },
@@ -239,7 +239,7 @@
             metricsIntro: 'Reference metrics from teams moving from manual processes to controlled artifact-based workflows.',
             heroEyebrow: 'Secure and auditable network automation',
             heroTitle: 'Standardize discovery, compliance, and intended configs from one platform.',
-            heroBody: 'Oktavia combines an Automation Engine (FastAPI) and a simple web UI (Django + SQLite by default) to run network workflows with control, traceability, and exportable evidence.',
+            heroBody: 'Oktavia combines an Automation Engine and a simple web UI to run network workflows with control, traceability, and exportable evidence.',
             heroActions: ['Request a Demo', 'Explore Oktavia'],
             heroBadgesAria: 'Platform highlights',
             heroBadges: ['Multi-vendor ready', 'Continuous auditing', 'Guided automation'],
@@ -255,9 +255,7 @@
             platformChips: [
                 'Async jobs',
                 'Versioned artifacts',
-                'NAPALM + pyATS discovery',
                 'Editable compliance rules',
-                'Jinja config generator',
                 'REST API with API key'
             ],
             servicesEyebrow: 'Platform capabilities',
@@ -325,7 +323,7 @@
             aboutTitle: 'Secure, auditable, and extensible automation for multi-vendor environments.',
             aboutParagraphs: [
                 'Oktavia is not meant to replace real-time monitoring NMS platforms. Its focus is to standardize discovery, compliance, and intended config generation through a controlled and traceable execution model.',
-                'The architecture separates UI and Automation Engine to support simple deployments (SQLite by default) and evolution to external backends without losing API compatibility or artifact traceability.'
+                'The architecture separates UI and Automation Engine to support simple deployments and evolution to external backends without losing API compatibility or artifact traceability.'
             ],
             aboutCardTitles: [
                 'Vendor extensibility',
@@ -340,12 +338,12 @@
             contactEyebrow: 'Let\'s talk',
             contactTitle: 'Evaluate Oktavia in a controlled, outcome-driven setup.',
             contactBody: 'Share your technical context to design a quickstart for discovery, compliance, and config generation in your current environment.',
-            contactBullets: ['REST API with X-API-Key authentication', 'Simple deployment with external-backend option'],
+            contactBullets: ['REST API with authentication', 'Simple deployment with external-backend option'],
             officeTitle: 'Head Office',
             officeLines: ['Office Tower, Downtown Reforma', 'Mexico City'],
             formLabels: ['Full name', 'Email', 'Company', 'What do you need to solve?'],
             submitButton: 'Send Request',
-            footerTagline: 'Oktavia: automation, compliance, and discovery for enterprise networks.',
+            footerTagline: 'Oktavia: intelligent automation for enterprise networks.',
             copyright: 'All rights reserved.',
             heroImageAlt: 'Main dashboard for network monitoring and auditing',
             platformImageAlt: 'Configuration compliance view in Oktavia',
@@ -614,6 +612,29 @@
 
     if (currentYear) {
         currentYear.textContent = String(new Date().getFullYear());
+    }
+
+    if (contactForm) {
+        const clearFormIfSubmitted = function () {
+            try {
+                if (window.sessionStorage.getItem(formSubmittedStorageKey) === '1') {
+                    contactForm.reset();
+                    window.sessionStorage.removeItem(formSubmittedStorageKey);
+                }
+            } catch (_error) {
+                // Ignore storage errors in private mode or restricted contexts.
+            }
+        };
+
+        window.addEventListener('pageshow', clearFormIfSubmitted);
+
+        contactForm.addEventListener('submit', function () {
+            try {
+                window.sessionStorage.setItem(formSubmittedStorageKey, '1');
+            } catch (_error) {
+                // Ignore storage errors in private mode or restricted contexts.
+            }
+        });
     }
 
     if (navToggle && mainNav) {
