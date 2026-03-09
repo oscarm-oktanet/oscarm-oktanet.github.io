@@ -66,8 +66,8 @@
     const translations = {
         es: {
             htmlLang: 'es',
-            title: 'Oktavia | Cumplimiento, Descubrimiento y Configuraciones Objetivo',
-            metaDescription: 'Oktavia unifica descubrimiento, cumplimiento y generación de configuraciones objetivo con tareas asíncronas, artefactos versionables y operación auditable para redes empresariales.',
+            title: 'Oktavia',
+            metaDescription: 'Oktavia unifica descubrimiento, cumplimiento y generación de configuraciones deseadas con tareas asíncronas, artefactos versionables y operación auditable para redes empresariales.',
             brandAria: 'Ir al inicio',
             navAria: 'Principal',
             navToggleOpen: 'Abrir menú',
@@ -89,20 +89,20 @@
             metricsTitle: 'Resultados operativos desde las primeras iteraciones de adopción.',
             metricsIntro: 'Métricas de referencia en equipos que migran de procesos manuales a flujos controlados con artefactos.',
             heroEyebrow: 'Automatización de redes segura y auditable',
-            heroTitle: 'Estandariza descubrimiento, cumplimiento y configuraciones objetivo desde una sola plataforma.',
+            heroTitle: 'Estandariza el descubrimiento, el cumplimiento y las configuraciones deseadas desde una sola plataforma.',
             heroBody: 'Oktavia combina un motor de automatización y una interfaz web simple para ejecutar flujos de red con control, trazabilidad y evidencia exportable.',
             heroActions: ['Solicitar una demostración', 'Conocer Oktavia'],
             heroBadgesAria: 'Puntos clave de la plataforma',
             heroBadges: ['Listo para múltiples fabricantes', 'Auditoría continua', 'Automatización guiada'],
             heroPoints: [
-                'Modelo con tareas asíncronas y artefactos versionables (JSON/CSV/CFG).',
-                'Sin cambios directos en la red: primero se generan configuraciones objetivo.',
+                'Modelo de ejecución basado en tareas asíncronas que generan resultados estructurados y versionables (JSON, CSV, CFG).',
+                'Sin cambios directos en la red: primero se generan configuraciones deseadas.',
                 'Remediación controlada con validación y aprobación previa.'
             ],
             trustLabel: 'Compatible con infraestructura multifabricante:',
             platformEyebrow: 'Producto principal',
             platformTitle: 'Oktavia: motor de automatización + interfaz web para operar redes con control continuo.',
-            platformBody: 'Diseñada para despliegues simples y demostraciones, con arquitectura preparada para servicios externos, Oktavia integra descubrimiento multifabricante, cumplimiento por sitio o dispositivo y generación de configuraciones objetivo en una sola consola.',
+            platformBody: 'Diseñada para despliegues simples y demostraciones, con arquitectura preparada para servicios externos, Oktavia integra descubrimiento multifabricante, cumplimiento por sitio o dispositivo y generación de configuraciones deseadas en una sola consola.',
             platformChips: [
                 'Tareas asíncronas',
                 'Artefactos versionables',
@@ -114,7 +114,7 @@
             serviceTitles: [
                 'Descubrimiento multifabricante',
                 'Pruebas y reglas de cumplimiento',
-                'Generador de configuraciones objetivo',
+                'Generador de configuraciones deseadas',
                 'Telemetría e inventario',
                 'Topología y gemelo digital',
                 'Programador y API de tareas'
@@ -140,7 +140,7 @@
             featureFocusTitles: [
                 'Telemetría operativa',
                 'Gemelo digital y desvío de configuración',
-                'Generador de configuraciones objetivo'
+                'Generador de configuraciones deseadas'
             ],
             featureFocusBodies: [
                 'Centraliza métricas, tendencias e historial para detectar anomalías y priorizar acciones de forma proactiva.',
@@ -149,7 +149,7 @@
             ],
             methodEyebrow: 'Modelo de ejecución',
             methodTitle: 'Operación basada en tareas asíncronas, artefactos y aprobación.',
-            methodTitles: ['Descubrimiento', 'Cumplimiento', 'Configuraciones objetivo', 'Validación y aprobación'],
+            methodTitles: ['Descubrimiento', 'Cumplimiento', 'Configuraciones deseadas', 'Validación y aprobación'],
             methodBodies: [
                 'Recolectamos y normalizamos el estado de la red por sitio y dispositivo para construir una línea base confiable.',
                 'Ejecutamos pruebas contra reglas editables para identificar desvíos y priorizar remediación controlada.',
@@ -158,7 +158,7 @@
             ],
             casesEyebrow: 'Casos de uso',
             casesTitle: 'Aplicaciones reales en operación de redes empresariales.',
-            caseTitles: ['Auditorías de cumplimiento', 'Configuraciones objetivo', 'Tableros técnicos'],
+            caseTitles: ['Auditorías de cumplimiento', 'Configuraciones deseadas', 'Tableros técnicos'],
             caseBodies: [
                 'Evalúa cumplimiento por sitio o dispositivo sin procesos manuales y con evidencia exportable.',
                 'Genera configuraciones desde plantillas y variables de servicio para reducir riesgo operativo en cambios.',
@@ -173,7 +173,7 @@
             aboutEyebrow: 'Arquitectura y enfoque',
             aboutTitle: 'Automatización segura, auditable y extensible para entornos multifabricante.',
             aboutParagraphs: [
-                'Oktavia no busca reemplazar un NMS de monitoreo en tiempo real. Su foco es estandarizar descubrimiento, cumplimiento y generación de configuraciones objetivo con un modelo de ejecución controlado y trazable.',
+                'Oktavia no busca reemplazar un NMS de monitoreo en tiempo real. Su foco es estandarizar descubrimiento, cumplimiento y generación de configuraciones deseadas con un modelo de ejecución controlado y trazable.',
                 'La arquitectura separa la interfaz web y el motor de automatización para facilitar despliegues simples y evolución a servicios externos sin perder compatibilidad de API ni trazabilidad de artefactos.'
             ],
             aboutCardTitles: [
@@ -215,8 +215,8 @@
         },
         en: {
             htmlLang: 'en',
-            title: 'Oktavia | Compliance, Discovery and Intended Configs',
-            metaDescription: 'Oktavia unifies discovery, compliance, and intended config generation with async jobs, versioned artifacts, and auditable operations for enterprise networks.',
+            title: 'Oktavia',
+            metaDescription: 'Oktavia unifies discovery, compliance, and desired configuration generation with async jobs, versioned artifacts, and auditable operations for enterprise networks.',
             brandAria: 'Back to top',
             navAria: 'Main',
             navToggleOpen: 'Open menu',
@@ -238,20 +238,20 @@
             metricsTitle: 'Operational outcomes from the first adoption cycles.',
             metricsIntro: 'Reference metrics from teams moving from manual processes to controlled artifact-based workflows.',
             heroEyebrow: 'Secure and auditable network automation',
-            heroTitle: 'Standardize discovery, compliance, and intended configs from one platform.',
+            heroTitle: 'Standardize discovery, compliance, and desired configurations from one platform.',
             heroBody: 'Oktavia combines an Automation Engine and a simple web UI to run network workflows with control, traceability, and exportable evidence.',
             heroActions: ['Request a Demo', 'Explore Oktavia'],
             heroBadgesAria: 'Platform highlights',
             heroBadges: ['Multi-vendor ready', 'Continuous auditing', 'Guided automation'],
             heroPoints: [
-                'Async job model with versioned artifacts (JSON/CSV/CFG).',
-                'No direct network changes: intended artifacts are generated first.',
+                'Execution model based on async jobs that generate structured, versioned outputs (JSON, CSV, CFG).',
+                'No direct network changes: desired configurations are generated first.',
                 'Controlled remediation with validation and approval gates.'
             ],
             trustLabel: 'Current base: Cisco IOS/IOS-XE, extensible to Fortinet, Juniper, and Ubiquiti:',
             platformEyebrow: 'Core Product',
             platformTitle: 'Oktavia: Automation Engine + UI for continuous-control network operations.',
-            platformBody: 'Built for simple deployments and demos, with architecture ready for external backends, Oktavia unifies multi-vendor discovery, per-site/device compliance, and intended config generation in one console.',
+            platformBody: 'Built for simple deployments and demos, with architecture ready for external backends, Oktavia unifies multi-vendor discovery, per-site/device compliance, and desired configuration generation in one console.',
             platformChips: [
                 'Async jobs',
                 'Versioned artifacts',
@@ -263,7 +263,7 @@
             serviceTitles: [
                 'Multi-vendor discovery',
                 'Compliance Tests + Rules',
-                'Intended Config Generator',
+                'Desired Configuration Generator',
                 'Telemetry and inventory',
                 'Topology + Digital Twin',
                 'Scheduler and jobs API'
@@ -284,12 +284,12 @@
                 'Physical/control-plane topology and routing views (BGP/OSPF) for impact analysis.'
             ],
             featureFocusEyebrow: 'Highlighted capabilities',
-            featureFocusTitle: 'Telemetry, Digital Twin, and Config Generator as core modules.',
+            featureFocusTitle: 'Telemetry, Digital Twin, and Desired Configuration Generator as core modules.',
             featureFocusIntro: 'These three modules accelerate diagnosis, reduce change risk, and improve traceability in every run.',
             featureFocusTitles: [
                 'Operational telemetry',
                 'Digital Twin and drift',
-                'Intended Config Generator'
+                'Desired Configuration Generator'
             ],
             featureFocusBodies: [
                 'Centralizes metrics, trends, and history to detect anomalies and prioritize actions proactively.',
@@ -298,7 +298,7 @@
             ],
             methodEyebrow: 'Execution model',
             methodTitle: 'Operations based on async jobs, artifacts, and approvals.',
-            methodTitles: ['Discovery', 'Compliance', 'Intended Configs', 'Validation and approval'],
+            methodTitles: ['Discovery', 'Compliance', 'Desired Configurations', 'Validation and approval'],
             methodBodies: [
                 'Collect and normalize network state by site/device to build a reliable operational baseline.',
                 'Run tests against editable rules to identify deviations and prioritize controlled remediation.',
@@ -307,7 +307,7 @@
             ],
             casesEyebrow: 'Use Cases',
             casesTitle: 'Real applications for enterprise network operations.',
-            caseTitles: ['Compliance audits', 'Intended configs', 'Technical dashboards'],
+            caseTitles: ['Compliance audits', 'Desired configurations', 'Technical dashboards'],
             caseBodies: [
                 'Evaluate compliance by site or device without manual processes and with exportable evidence.',
                 'Generate configs from templates and service vars to reduce operational change risk.',
@@ -322,7 +322,7 @@
             aboutEyebrow: 'Architecture and approach',
             aboutTitle: 'Secure, auditable, and extensible automation for multi-vendor environments.',
             aboutParagraphs: [
-                'Oktavia is not meant to replace real-time monitoring NMS platforms. Its focus is to standardize discovery, compliance, and intended config generation through a controlled and traceable execution model.',
+                'Oktavia is not meant to replace real-time monitoring NMS platforms. Its focus is to standardize discovery, compliance, and desired configuration generation through a controlled and traceable execution model.',
                 'The architecture separates UI and Automation Engine to support simple deployments and evolution to external backends without losing API compatibility or artifact traceability.'
             ],
             aboutCardTitles: [
