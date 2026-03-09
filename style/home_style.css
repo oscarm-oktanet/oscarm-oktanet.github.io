@@ -428,7 +428,7 @@ p {
     position: relative;
     isolation: isolate;
     overflow: hidden;
-    padding: 96px 0 74px;
+    padding: 76px 0 74px;
     background: radial-gradient(circle at 78% 22%, #d4e5fc 0%, #eaf2fd 38%, #f3f7fc 76%);
 }
 
@@ -458,7 +458,7 @@ p {
 
 .hero-copy h1 {
     margin: 12px 0 18px;
-    font-size: clamp(1.9rem, 3.8vw, 3.1rem);
+    font-size: clamp(1.75rem, 3.3vw, 2.8rem);
     max-width: 20ch;
 }
 
@@ -1470,7 +1470,7 @@ p {
     }
 
     .hero-section {
-        padding-top: 88px;
+        padding-top: 72px;
     }
 
     .trust-marquee::before,
@@ -1612,7 +1612,7 @@ p {
 
 @media (max-width: 640px) {
     .hero-section {
-        padding: 76px 0 56px;
+        padding: 64px 0 56px;
     }
 
     .hero-actions {
