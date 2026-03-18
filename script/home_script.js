@@ -20,6 +20,7 @@
     const showcaseSectionEl = document.querySelector('.showcase-section');
     const featureFocusSectionEl = document.querySelector('.feature-focus-section');
     const metricsSectionLabelEl = document.querySelector('.metrics-section');
+    const licensingSectionEl = document.querySelector('.licensing-section');
     const heroBadgesContainer = document.querySelector('.hero-badges');
     const brandImage = document.querySelector('.brand img');
     const brandWordmark = document.querySelector('.brand-wordmark');
@@ -27,6 +28,8 @@
     const platformImage = document.querySelector('.platform-visual img');
     const serviceIcons = document.querySelectorAll('.services-grid .service-card img');
     const showcaseImages = document.querySelectorAll('.showcase-grid img');
+    const licensingTableHeadRow = document.querySelector('.licensing-table thead tr');
+    const licensingTableBody = document.querySelector('.licensing-table tbody');
     const footerLogo = document.querySelector('.footer-brand img');
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const globalAnimationDelayMs = 140;
@@ -61,6 +64,29 @@
                 element.alt = texts[index];
             }
         });
+    };
+
+    const renderLicensingStatus = function (isIncluded, includedLabel, unavailableLabel, includedMark, unavailableMark) {
+        return '<span class="license-status ' + (isIncluded ? 'is-included' : 'is-unavailable') + '" aria-label="' + (isIncluded ? includedLabel : unavailableLabel) + '"><span aria-hidden="true">' + (isIncluded ? includedMark : unavailableMark) + '</span></span>';
+    };
+
+    const renderLicensingTable = function (copy) {
+        if (!licensingTableHeadRow || !licensingTableBody || !copy.licensingHeaders || !copy.licensingRows) {
+            return;
+        }
+
+        licensingTableHeadRow.innerHTML = copy.licensingHeaders.map(function (header) {
+            return '<th scope="col">' + header + '</th>';
+        }).join('');
+
+        licensingTableBody.innerHTML = copy.licensingRows.map(function (row) {
+            return '<tr' + (row.advanced ? ' class="licensing-row-advanced"' : '') + '>' +
+                '<th scope="row">' + row.module + '</th>' +
+                '<td>' + row.description + '</td>' +
+                '<td class="licensing-table-status">' + renderLicensingStatus(row.core, copy.licensingIncludedLabel, copy.licensingUnavailableLabel, copy.licensingIncludedMark, copy.licensingUnavailableMark) + '</td>' +
+                '<td class="licensing-table-status">' + renderLicensingStatus(row.pro, copy.licensingIncludedLabel, copy.licensingUnavailableLabel, copy.licensingIncludedMark, copy.licensingUnavailableMark) + '</td>' +
+                '</tr>';
+        }).join('');
     };
 
     const translations = {
@@ -185,6 +211,109 @@
                 'Cada fabricante se integra con adaptador de descubrimiento, normalizador, reglas de cumplimiento y plantillas Jinja.',
                 'Prioriza remediación supervisada con aprobación, evitando automatizaciones opacas y no auditables.',
                 'La licencia básica cubre cumplimiento e inventario; la avanzada agrega observabilidad, programación y gemelo digital.'
+            ],
+            licensingAria: 'Licenciamiento Oktavia',
+            licensingEyebrow: 'Licenciamiento',
+            licensingTitle: 'Oktavia Core y Oktavia Pro',
+            licensingIntro: '',
+            licensingPlanLabels: [],
+            licensingPlanTitles: [],
+            licensingPlanBodies: [],
+            licensingHeaders: ['Módulo Oktavia', '', 'Oktavia Core', 'Oktavia Pro'],
+            licensingIncludedLabel: 'Incluido',
+            licensingUnavailableLabel: 'No incluido',
+            licensingIncludedMark: '✓',
+            licensingUnavailableMark: 'X',
+            licensingRows: [
+                {
+                    module: 'Panel de automatización',
+                    description: 'Vista ejecutiva del estado de la red, cumplimiento global, conectividad (Ping/SSH) y actividad reciente',
+                    core: true,
+                    pro: true
+                },
+                {
+                    module: 'Inventario de red',
+                    description: 'Inventario dinámico multi-fabricante con filtros por sitio, rol, plataforma y proveedor, modelo, metadata.',
+                    core: true,
+                    pro: true
+                },
+                {
+                    module: 'Topología de red',
+                    description: 'Mapa interactivo de la red con vistas física, control plane, ruteo, protocolos LLDP, CDP, OSPF, EIGRP, BGP y STP, VRRP, direccionamiento IP.',
+                    core: true,
+                    pro: true
+                },
+                {
+                    module: 'Cumplimiento de configuración',
+                    description: 'Verificación de cumplimiento de configuración con reglas, tests y diagnóstico',
+                    core: true,
+                    pro: true
+                },
+                {
+                    module: 'Generador de configuración',
+                    description: 'Generación de configuraciones estándar mediante plantillas y variables de servicio',
+                    core: true,
+                    pro: true
+                },
+                {
+                    module: 'Operaciones y programador',
+                    description: 'Ejecución de auditorías, sincronización de inventario y orquestador de tareas',
+                    core: true,
+                    pro: true
+                },
+                {
+                    module: 'Respaldos de configuración',
+                    description: 'Visualización y descarga de archivos de configuración',
+                    core: true,
+                    pro: true
+                },
+                {
+                    module: 'Inteligencia IP (IPAM)',
+                    description: 'Mapa de direccionamiento IP, subredes detectadas y vecinos de routing',
+                    core: true,
+                    pro: true
+                },
+                {
+                    module: 'FinOps',
+                    description: 'Calculadora de ROI de automatización y análisis de ahorro operativo',
+                    core: true,
+                    pro: true
+                },
+                {
+                    module: 'Telemetría en tiempo real',
+                    description: 'Métricas SNMP (CPU, memoria, interfaces), GrPC(telemetria streaming), APIs, con visualización temporal',
+                    core: false,
+                    pro: true,
+                    advanced: true
+                },
+                {
+                    module: 'Gemelo digital',
+                    description: 'Capturas del estado de la red, comparación de configuración deseada vs activa y detección de cambios de configuracion',
+                    core: false,
+                    pro: true,
+                    advanced: true
+                },
+                {
+                    module: 'Análisis inteligente de red',
+                    description: 'Analisis de red automáticos de riesgo, configuración y capacidad, documentación de la red.',
+                    core: false,
+                    pro: true,
+                    advanced: true
+                },
+                {
+                    module: 'Reportes avanzados',
+                    description: 'Reportes de salud de red, cambios de configuración, capacidad, puertos y analisis de riesgos.',
+                    core: false,
+                    pro: true,
+                    advanced: true
+                },
+                {
+                    module: 'Gestión multi-tenant',
+                    description: 'Multi-organización, gestión de usuarios y separación de datos por tenant.',
+                    core: false,
+                    pro: true,
+                    advanced: true
+                }
             ],
             contactEyebrow: 'Conversemos',
             contactTitle: 'Evalúa Oktavia en un entorno controlado y orientado a resultados.',
@@ -335,6 +464,109 @@
                 'It prioritizes supervised remediation with approvals, avoiding opaque and non-auditable automation.',
                 'Core covers compliance and inventory; Pro adds advanced observability, scheduler, and Digital Twin.'
             ],
+            licensingAria: 'Oktavia licensing',
+            licensingEyebrow: 'Licensing',
+            licensingTitle: 'Oktavia Core and Oktavia Pro',
+            licensingIntro: '',
+            licensingPlanLabels: [],
+            licensingPlanTitles: [],
+            licensingPlanBodies: [],
+            licensingHeaders: ['Module', 'Description', 'Core', 'Pro'],
+            licensingIncludedLabel: 'Included',
+            licensingUnavailableLabel: 'Not included',
+            licensingIncludedMark: '✓',
+            licensingUnavailableMark: '—',
+            licensingRows: [
+                {
+                    module: 'Automation Dashboard',
+                    description: 'Executive view of network status, compliance score, connectivity and recent activity',
+                    core: true,
+                    pro: true
+                },
+                {
+                    module: 'Network Inventory',
+                    description: 'Dynamic multi-vendor inventory with filters by site, role and platform',
+                    core: true,
+                    pro: true
+                },
+                {
+                    module: 'Network Topology',
+                    description: 'Interactive topology map with physical, control plane, routing, OSPF, BGP and STP views',
+                    core: true,
+                    pro: true
+                },
+                {
+                    module: 'Configuration Compliance',
+                    description: 'Configuration compliance validation with rules, tests and diagnostics',
+                    core: true,
+                    pro: true
+                },
+                {
+                    module: 'Configuration Generator',
+                    description: 'Standard configuration generation using templates and service variables',
+                    core: true,
+                    pro: true
+                },
+                {
+                    module: 'Operations & Scheduler',
+                    description: 'Audit execution, inventory sync and scheduled jobs',
+                    core: true,
+                    pro: true
+                },
+                {
+                    module: 'Configuration Backups',
+                    description: 'Device configuration viewer and download',
+                    core: true,
+                    pro: true
+                },
+                {
+                    module: 'IP Intelligence (IPAM)',
+                    description: 'Network IP addressing map with detected subnets and routing peers',
+                    core: true,
+                    pro: true
+                },
+                {
+                    module: 'FinOps',
+                    description: 'Automation ROI calculator and operational cost analysis',
+                    core: true,
+                    pro: true
+                },
+                {
+                    module: 'Real-time Telemetry',
+                    description: 'SNMP metrics (CPU, memory, interfaces) with time-series visualization',
+                    core: false,
+                    pro: true,
+                    advanced: true
+                },
+                {
+                    module: 'Digital Twin',
+                    description: 'Network snapshots, intended vs running comparison and drift detection',
+                    core: false,
+                    pro: true,
+                    advanced: true
+                },
+                {
+                    module: 'AI Network Insights',
+                    description: 'Automated analysis of risk, configuration and capacity',
+                    core: false,
+                    pro: true,
+                    advanced: true
+                },
+                {
+                    module: 'Advanced Reports',
+                    description: 'Network health, drift, capacity, port usage and configuration risk reports',
+                    core: false,
+                    pro: true,
+                    advanced: true
+                },
+                {
+                    module: 'Multi-tenant Management',
+                    description: 'Multi-organization platform with tenant data isolation',
+                    core: false,
+                    pro: true,
+                    advanced: true
+                }
+            ],
             contactEyebrow: 'Let\'s talk',
             contactTitle: 'Evaluate Oktavia in a controlled, outcome-driven setup.',
             contactBody: 'Share your technical context to design a quickstart for discovery, compliance, and config generation in your current environment.',
@@ -427,6 +659,10 @@
             metricsSectionLabelEl.setAttribute('aria-label', copy.metricsAria);
         }
 
+        if (licensingSectionEl) {
+            licensingSectionEl.setAttribute('aria-label', copy.licensingAria);
+        }
+
         if (langToggle) {
             langToggle.setAttribute('aria-label', copy.langToggleAria);
         }
@@ -488,6 +724,14 @@
         setTextList(document.querySelectorAll('.about-copy .about-text'), copy.aboutParagraphs);
         setTextList(document.querySelectorAll('.about-card h3'), copy.aboutCardTitles);
         setTextList(document.querySelectorAll('.about-card p'), copy.aboutCardBodies);
+
+        setText(document.querySelector('.licensing-copy .eyebrow'), copy.licensingEyebrow);
+        setText(document.querySelector('.licensing-copy h2'), copy.licensingTitle);
+        setText(document.querySelector('.licensing-copy .section-intro'), copy.licensingIntro);
+        setTextList(document.querySelectorAll('.licensing-plan-label'), copy.licensingPlanLabels);
+        setTextList(document.querySelectorAll('.licensing-plan h3'), copy.licensingPlanTitles);
+        setTextList(document.querySelectorAll('.licensing-plan p:last-child'), copy.licensingPlanBodies);
+        renderLicensingTable(copy);
 
         setText(document.querySelector('.contact-copy .eyebrow'), copy.contactEyebrow);
         setText(document.querySelector('.contact-copy h2'), copy.contactTitle);
@@ -678,7 +922,8 @@
         '.hero-copy, .hero-visual, .platform-copy, .platform-visual, .about-copy, ' +
         '.services-section .service-card, .showcase-section .showcase-grid figure, ' +
         '.feature-focus-section .feature-focus-card, ' +
-        '.cases-section .cases-grid article, .metrics-copy, .metrics-section .metrics-grid article, .contact-copy, .contact-form, .footer-brand, .footer-links'
+        '.cases-section .cases-grid article, .metrics-copy, .metrics-section .metrics-grid article, ' +
+        '.licensing-copy, .licensing-plan, .licensing-table-wrap, .contact-copy, .contact-form, .footer-brand, .footer-links'
     );
 
     if (revealTargets.length > 0) {
