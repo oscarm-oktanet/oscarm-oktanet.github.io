@@ -70,38 +70,6 @@
         return '<span class="license-status ' + (isIncluded ? 'is-included' : 'is-unavailable') + '" aria-label="' + (isIncluded ? includedLabel : unavailableLabel) + '"><span aria-hidden="true">' + (isIncluded ? includedMark : unavailableMark) + '</span></span>';
     };
 
-    const bindLicensingTableToggle = function () {
-        if (!licensingTableBody || licensingTableBody.dataset.bound === 'true') {
-            return;
-        }
-
-        licensingTableBody.dataset.bound = 'true';
-        licensingTableBody.addEventListener('click', function (event) {
-            const toggle = event.target.closest('.licensing-toggle');
-
-            if (!toggle) {
-                return;
-            }
-
-            const detailId = toggle.getAttribute('aria-controls');
-            const detailPanel = detailId ? document.getElementById(detailId) : null;
-            const mainRow = toggle.closest('.licensing-table-main');
-
-            if (!detailPanel) {
-                return;
-            }
-
-            const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
-
-            toggle.setAttribute('aria-expanded', String(!isExpanded));
-            detailPanel.setAttribute('aria-hidden', String(isExpanded));
-
-            if (mainRow) {
-                mainRow.classList.toggle('is-open', !isExpanded);
-            }
-        });
-    };
-
     const renderLicensingTable = function (copy) {
         if (!licensingTableHeadRow || !licensingTableBody || !copy.licensingHeaders || !copy.licensingRows) {
             return;
@@ -112,7 +80,6 @@
         }).join('');
 
         licensingTableBody.innerHTML = copy.licensingRows.map(function (row, index) {
-            const detailId = 'licensing-detail-' + index;
             const rowClasses = ['licensing-table-main'];
 
             if (row.advanced) {
@@ -127,18 +94,8 @@
                 '<th scope="row" class="licensing-table-module">' + row.module + '</th>' +
                 '<td class="licensing-table-status">' + renderLicensingStatus(row.core, copy.licensingIncludedLabel, copy.licensingUnavailableLabel, copy.licensingIncludedMark, copy.licensingUnavailableMark) + '</td>' +
                 '<td class="licensing-table-status">' + renderLicensingStatus(row.pro, copy.licensingIncludedLabel, copy.licensingUnavailableLabel, copy.licensingIncludedMark, copy.licensingUnavailableMark) + '</td>' +
-                '<td class="licensing-table-expand">' +
-                '<div class="licensing-expand-shell">' +
-                '<div id="' + detailId + '" class="licensing-inline-detail" aria-hidden="true">' + row.description + '</div>' +
-                '<button class="licensing-toggle" type="button" aria-expanded="false" aria-controls="' + detailId + '" aria-label="' + copy.licensingToggleLabel + '">' +
-                '<span class="licensing-toggle-icon" aria-hidden="true"></span>' +
-                '</button>' +
-                '</div>' +
-                '</td>' +
                 '</tr>';
         }).join('');
-
-        bindLicensingTableToggle();
     };
 
     const translations = {
@@ -267,16 +224,15 @@
             licensingAria: 'Licenciamiento Oktavia',
             licensingEyebrow: 'Licenciamiento',
             licensingTitle: 'Oktavia Core y Oktavia Pro',
-            licensingIntro: 'Compara los módulos incluidos en cada edición y expande cada fila para ver el alcance de cada capacidad.',
+            licensingIntro: 'Compara los módulos incluidos en cada edición.',
             licensingPlanLabels: [],
             licensingPlanTitles: [],
             licensingPlanBodies: [],
-            licensingHeaders: ['Módulo Oktavia', 'Oktavia Core', 'Oktavia Pro', ''],
+            licensingHeaders: ['Módulo Oktavia', 'Oktavia Core', 'Oktavia Pro'],
             licensingIncludedLabel: 'Incluido',
             licensingUnavailableLabel: 'No incluido',
             licensingIncludedMark: '✓',
             licensingUnavailableMark: 'X',
-            licensingToggleLabel: 'Mostrar descripción',
             licensingRows: [
                 {
                     module: 'Panel de automatización',
@@ -520,16 +476,15 @@
             licensingAria: 'Oktavia licensing',
             licensingEyebrow: 'Licensing',
             licensingTitle: 'Oktavia Core and Oktavia Pro',
-            licensingIntro: 'Compare the modules included in each edition and expand each row to view the scope of each capability.',
+            licensingIntro: 'Compare the modules included in each edition.',
             licensingPlanLabels: [],
             licensingPlanTitles: [],
             licensingPlanBodies: [],
-            licensingHeaders: ['Module', 'Core', 'Pro', ''],
+            licensingHeaders: ['Module', 'Core', 'Pro'],
             licensingIncludedLabel: 'Included',
             licensingUnavailableLabel: 'Not included',
             licensingIncludedMark: '✓',
             licensingUnavailableMark: '—',
-            licensingToggleLabel: 'Show description',
             licensingRows: [
                 {
                     module: 'Automation Dashboard',
