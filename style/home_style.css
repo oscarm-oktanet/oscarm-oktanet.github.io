@@ -1859,12 +1859,22 @@ p {
         letter-spacing: 0.03em;
         white-space: normal;
         overflow-wrap: anywhere;
+        word-break: break-word;
+        text-wrap: balance;
     }
 
     .licensing-table thead th:nth-child(2),
     .licensing-table thead th:nth-child(3) {
-        width: 5.4rem;
-        min-width: 5.4rem;
+        width: 22%;
+        min-width: 0;
+        white-space: normal;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+        text-wrap: balance;
+    }
+
+    .licensing-table thead th:first-child {
+        width: 56%;
     }
 
     .licensing-table tbody th,
@@ -1878,7 +1888,7 @@ p {
     }
 
     .licensing-table-status {
-        min-width: 5.4rem;
+        min-width: 0;
     }
 
     .license-status {
